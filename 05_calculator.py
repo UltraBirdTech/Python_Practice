@@ -20,7 +20,7 @@ if len(args) < 4:
 first = 0
 second = 0
 
-# check int 
+# check int
 if not type(args[1]) is int:
     print('[ERROR]: 1要素目の計算する値は数値を入力してください。')
     exit()
