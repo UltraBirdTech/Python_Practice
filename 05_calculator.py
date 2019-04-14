@@ -10,9 +10,8 @@ import sys
 # recieve args.
 args = sys.argv
 
-print(len(args))
 # check args
-if len(args) <= 4:
+if len(args) < 4:
     print('[ERROR]:   引数の数が足りません')
     print('[USAGE]:   python 05_calculator.py [最初の数値]、[二つ目の数値]、[計算方法(+-*/)]')
     print('[EXAMPLE]: python 05_calculator.py 2 2 + ')
