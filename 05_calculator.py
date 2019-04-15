@@ -5,7 +5,6 @@
 # 3. 数値リテラルの四則演算
 # 4. エラーチェック
 ###################################################
-
 import sys
 
 # recieve args.
@@ -21,6 +20,7 @@ if len(args) < 4:
 first = 0
 second = 0
 
+print(type(args[1]) is int)
 # check int
 if not type(args[1]) is int:
     print('[ERROR]: 1要素目の計算する値は数値を入力してください。')
@@ -35,7 +35,6 @@ second = int(args[2])
 operator = args[3]
 
 ans = 0
-
 if operator == '+':
     ans = first + second
 
