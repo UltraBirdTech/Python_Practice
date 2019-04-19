@@ -20,15 +20,6 @@ if len(args) < 4:
 first = 0
 second = 0
 
-# check int
-#if not type(args[1]) is int:
-#j    print('[ERROR]: 1要素目の計算する値は数値を入力してください。')
-#    exit()
-
-#if not type(args[2]) is int:
-#    print('[ERROR]: 2要素目の計算する値は数値を入力してください。')
-#    exit()
-
 try:
     first = int(args[1])
     second = int(args[2])
