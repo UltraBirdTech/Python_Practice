@@ -24,7 +24,7 @@ try:
     first = int(args[1])
     second = int(args[2])
 except Exception as err:
-    print('[ERROR]: 2要素目の計算する値は数値を入力してください。')
+    print('[ERROR]: 計算する値は数値を入力してください。')
     exit()
 
 operator = args[3]
