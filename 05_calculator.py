@@ -1,4 +1,4 @@
-##########calculator.py############################
+#########calculator.py############################
 # 学ぶポイント
 # 1. 引数の扱い方
 # 2. 条件分岐のポイント
@@ -32,7 +32,7 @@ second = 0
 try:
     first = int(args[1])
     second = int(args[2])
-except Error as err:
+except Exception as err:
     print('[ERROR]: 2要素目の計算する値は数値を入力してください。')
     exit()
 
