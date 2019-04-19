@@ -48,5 +48,5 @@ elif operator == '/':
 else:
     print('[ERROR]: 演算子が期待したものではありません。+-*/のうちの一つからお選びください')
     exit()
-    
+
 print(ans)
