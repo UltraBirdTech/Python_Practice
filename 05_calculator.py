@@ -43,7 +43,7 @@ elif operator == '/':
     if second == 0:
         print('[ERROR]: second is 0')
         exit()
-    ans = first /second
+    ans = first / second
 
 else:
     print('[ERROR]: 演算子が期待したものではありません。+-*/のうちの一つからお選びください')
