@@ -24,4 +24,3 @@ response = urllib.request.urlopen(req)
 
 json = json.loads(response.read().decode('utf-8')
 print(json)
-
