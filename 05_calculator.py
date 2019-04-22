@@ -42,6 +42,7 @@ elif operator == '/':
     # check zero
     if second == 0:
         print('[ERROR]: second is 0')
+        print('[ERROR]: 割り算を行う際に0徐算が発生しました。第二引数を1以上の数値にしてください。')
         exit()
     ans = first / second
 
