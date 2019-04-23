@@ -5,11 +5,11 @@
 # 3. 数字リテラルの余剰の出し方
 
 for i in range(1, 100):
-    string = ''
+    s = ''
     if (i % 3) == 0:
-        string += 'fizz'
+        s += 'fizz'
     if (i % 5) == 0:
-        string += 'buzz'
+        s += 'buzz'
 
-    if string != '':
-        print(str(i) + ':' + string)
+    if s != '':
+        print(str(i) + ':' + s)
