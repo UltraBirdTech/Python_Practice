@@ -1,10 +1,9 @@
-#########calculator.py############################
+# calculator.py
 # 学ぶポイント
 # 1. 引数の扱い方
 # 2. 条件分岐のポイント
 # 3. 数値リテラルの四則演算
 # 4. エラーチェック(try, except)
-###################################################
 import sys
 
 # recieve args.
@@ -43,11 +42,12 @@ elif operator == '/':
     # check zero
     if second == 0:
         print('[ERROR]: second is 0')
+        print('[ERROR]: 割り算を行う際に0徐算が発生しました。第二引数を1以上の数値にしてください。')
         exit()
-    ans = first /second
+    ans = first / second
 
 else:
     print('[ERROR]: 演算子が期待したものではありません。+-*/のうちの一つからお選びください')
     exit()
-    
+
 print(ans)

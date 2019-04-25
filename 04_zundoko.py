@@ -9,7 +9,7 @@ while(True):
         str = ''.join(array)
         if str == 'zunzunzunzundoko':
             print(str)
-            print ('KI・YO・SHI')
+            print('KI・YO・SHI')
             break
 
         del array[0]
