@@ -11,6 +11,10 @@ import sys
 
 argv = sys.argv
 
+if len(argv) < 2:
+    print('[ERROR]: 引数が足りません')
+    exit()
+
 virus_total_api_url = 'https://www.virustotal.com/vtapi/v2/file/report'
 
 # api_key
@@ -22,5 +26,5 @@ data = urllib.parse.urlencode(param)
 req = urllib.request.Request(virus_total_api_url, data.encode())
 response = urllib.request.urlopen(req)
 
-json = json.loads(response.read().decode('utf-8')
+json = json.loads(response.read().decode('utf-8'))
 print(json)
