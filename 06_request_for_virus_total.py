@@ -18,7 +18,7 @@ if len(argv) < 2:
 virus_total_api_url = 'https://www.virustotal.com/vtapi/v2/file/report'
 
 # api_key
-api_key = ''
+api_key = 'e7416f0e54656ee951c464471fdea80e33e89e859d798eb158fdd713f7646d72'
 
 data_sha256 = argv[1]
 param = {'resource': data_sha256, 'apikey': api_key}
