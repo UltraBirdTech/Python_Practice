@@ -10,12 +10,7 @@ def main():
   # recieve args.
   args = sys.argv
 
-  # check args
-  if len(args) < 4:
-      print('[ERROR]:   引数の数が足りません')
-      print('[USAGE]:   python 05_calculator.py [最初の数値]、[二つ目の数値]、[計算方法(+-*/)]')
-      print('[EXAMPLE]: python 05_calculator.py 2 2 + ')
-      exit()
+  check_validate(args)
 
   first = 0
   second = 0
@@ -52,5 +47,13 @@ def main():
       exit()
 
   print(ans)
+
+def check_validate(args):
+  # check args
+  if len(args) < 4:
+      print('[ERROR]:   引数の数が足りません')
+      print('[USAGE]:   python 05_calculator.py [最初の数値]、[二つ目の数値]、[計算方法(+-*/)]')
+      print('[EXAMPLE]: python 05_calculator.py 2 2 + ')
+      exit()
 
 main()
