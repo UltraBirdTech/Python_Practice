@@ -10,20 +10,13 @@ def main():
   # recieve args.
   args = sys.argv
 
-  check_validate(args)
-
-  first = 0
-  second = 0
-
   try:
-      first = int(args[1])
-      second = int(args[2])
+      first, second = check_validate(args)
+      calculate(first, second, args[3])
   except Exception as err:
       print('[ERROR]: 計算する値は数値を入力してください。')
       exit()
 
-  operator = args[3]
-  calculate(first, second, operator)
 
 def check_validate(args):
   # check args num
@@ -32,6 +25,11 @@ def check_validate(args):
       print('[USAGE]:   python 05_calculator.py [最初の数値]、[二つ目の数値]、[計算方法(+-*/)]')
       print('[EXAMPLE]: python 05_calculator.py 2 2 + ')
       exit()
+
+  first = int(args[1])
+  second = int(args[2])
+  
+  return first, second
 
 def calculate(first, second, operator):
   ans = 0
