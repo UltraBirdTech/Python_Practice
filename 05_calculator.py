@@ -27,7 +27,7 @@ def check_validate(args):
     # check args num
     if len(args) < 4:
         print('[ERROR]:   引数の数が足りません')
-        print('[USAGE]:   python 05_calculator.py [最初の数値]、[二つ目の数値]、[計算方法(+-*/)]')
+        print('[USAGE]:   python 05_calculator.py [最初の数値][2つ目の数値][演算子(+-*/)]')
         print('[EXAMPLE]: python 05_calculator.py 2 2 + ')
         exit()
 
