@@ -6,6 +6,7 @@
 # 4. エラーチェック(try, except)
 import sys
 
+
 def main():
     # recieve args.
     args = sys.argv
