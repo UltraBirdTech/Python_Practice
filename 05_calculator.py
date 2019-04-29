@@ -13,6 +13,11 @@ def main():
   try:
       first, second = check_validate(args)
       calculate(first, second, args[3])
+  except ZeroDivisionError as err:
+      print('[ERROR]: 割り算を行う際に0徐算が発生しました。第二引数を1以上の数値にしてください。')
+      print('[ERROR]: ', str(err))
+      exit()
+      
   except Exception as err:
       print('[ERROR]: 計算する値は数値を入力してください。')
       exit()
@@ -43,11 +48,6 @@ def calculate(first, second, operator):
       ans = first * second
 
   elif operator == '/':
-      # check zero
-      if second == 0:
-          print('[ERROR]: second is 0')
-          print('[ERROR]: 割り算を行う際に0徐算が発生しました。第二引数を1以上の数値にしてください。')
-          exit()
       ans = first / second
 
   else:
