@@ -6,20 +6,25 @@
 # 4. エラーチェック(try, except)
 import sys
 
+operators = ('+', '-', '*', '/')
 
 def main():
     # recieve args.
     args = sys.argv
 
     try:
-        first, second = check_validate(args)
-        calculate(first, second, args[3])
+        first, second, operator= check_validate(args)
+        calculate(first, second, operator)
     except ZeroDivisionError as err:
         print('[ERROR]: 割り算を行う際に0徐算が発生しました。第二引数を1以上の数値にしてください。')
         print('[ERROR]: ', str(err))
         exit()
     except ValueError as err:
         print('[ERROR]: 計算する値は数値を入力してください。')
+        print('[ERROR]: ', str(err))
+        exit()
+    except NotIncludeError as err:
+        print('[ERROR]: 演算子が期待したものではありません。+-*/のうちの一つからお選びください')
         print('[ERROR]: ', str(err))
         exit()
 
@@ -34,8 +39,13 @@ def check_validate(args):
 
     first = int(args[1])
     second = int(args[2])
+    operator = args[3]
     
-    return first, second
+    # check operator
+    if not operator in operators:
+        raise NotIncludeError(operator)
+
+    return first, second, operator
 
 def calculate(first, second, operator):
     ans = 0
@@ -56,5 +66,8 @@ def calculate(first, second, operator):
         exit()
 
     print(ans)
+
+class NotIncludeError(Exception):
+    pass
 
 main()
