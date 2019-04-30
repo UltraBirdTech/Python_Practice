@@ -11,11 +11,11 @@ operators = ('+', '-', '*', '/')
 def main():
     # recieve args.
     argv = sys.argv
+    result = 0
 
     try:
         check_validate(argv)
         result = calculate(int(argv[1]), int(argv[2]), argv[3])
-        print(result)
     except ZeroDivisionError as err:
         print('[ERROR]: 割り算を行う際に0徐算が発生しました。第二引数を1以上の数値にしてください。')
         print('[ERROR]: ', str(err))
@@ -33,6 +33,8 @@ def main():
         print('[USAGE]:   python 05_calculator.py [最初の数値][2つ目の数値][演算子(+-*/)]')
         print('[EXAMPLE]: python 05_calculator.py 2 2 + ')
         exit()
+
+    print(result)
 
 
 def check_validate(argv):
