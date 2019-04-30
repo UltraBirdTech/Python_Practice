@@ -1,6 +1,6 @@
 import random
 
-zundoko = ['ズン', 'ドコ']
+zundoko = ('ズン', 'ドコ')
 array = []
 while(True):
     array.append(random.choice(zundoko))
