@@ -18,8 +18,9 @@ def main():
         print('[ERROR]: 割り算を行う際に0徐算が発生しました。第二引数を1以上の数値にしてください。')
         print('[ERROR]: ', str(err))
         exit()
-    except Exception as err:
+    except ValueError as err:
         print('[ERROR]: 計算する値は数値を入力してください。')
+        print('[ERROR]: ', str(err))
         exit()
 
 
