@@ -25,7 +25,7 @@ def main():
         exit()
     except NotIncludeError as err:
         print('[ERROR]: 演算子が期待したものではありません。+-*/のうちの一つからお選びください')
-        print('[ERROR]: ', str(err), 'is not include a list')
+        print('[ERROR]: "', str(err), '" is not include a list')
         exit()
     except NotMatchArgvError as err:
         print('[ERROR]:   引数の数が足りません')
