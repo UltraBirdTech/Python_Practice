@@ -10,11 +10,11 @@ operators = ('+', '-', '*', '/')
 
 def main():
     # recieve args.
-    args = sys.argv
+    argv = sys.argv
 
     try:
-        first, second, operator= check_validate(args)
-        calculate(first, second, operator)
+        check_validate(argv)
+        calculate(int(argv[1]), int(argv[2]), argv[3])
     except ZeroDivisionError as err:
         print('[ERROR]: 割り算を行う際に0徐算が発生しました。第二引数を1以上の数値にしてください。')
         print('[ERROR]: ', str(err))
@@ -34,20 +34,18 @@ def main():
         exit()
 
 
-def check_validate(args):
-    # check args num
-    if len(args) < 4:
+def check_validate(argv):
+    # check argv num
+    if len(argv) < 4:
         raise NotMatchArgvError()
 
-    first = int(args[1])
-    second = int(args[2])
-    operator = args[3]
+    first = int(argv[1])
+    second = int(argv[2])
+    operator = argv[3]
     
     # check operator
     if not operator in operators:
         raise NotIncludeError(operator)
-
-    return first, second, operator
 
 def calculate(first, second, operator):
     ans = 0
