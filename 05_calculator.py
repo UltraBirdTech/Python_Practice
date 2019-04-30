@@ -39,10 +39,10 @@ def check_validate(argv):
     if len(argv) < 4:
         raise NotMatchArgvError()
 
-    first = int(argv[1])
-    second = int(argv[2])
+    int(argv[1])
+    int(argv[2])
+
     operator = argv[3]
-    
     # check operator
     if not operator in operators:
         raise NotIncludeError(operator)
