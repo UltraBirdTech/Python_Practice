@@ -14,7 +14,8 @@ def main():
 
     try:
         check_validate(argv)
-        calculate(int(argv[1]), int(argv[2]), argv[3])
+        result = calculate(int(argv[1]), int(argv[2]), argv[3])
+        print(result)
     except ZeroDivisionError as err:
         print('[ERROR]: 割り算を行う際に0徐算が発生しました。第二引数を1以上の数値にしてください。')
         print('[ERROR]: ', str(err))
@@ -62,10 +63,9 @@ def calculate(first, second, operator):
         ans = first / second
 
     else:
-        print('[ERROR]: 演算子が期待したものではありません。+-*/のうちの一つからお選びください')
-        exit()
+        print('[ERROR]: 計算を行うことができませんでした。')
 
-    print(ans)
+    return ans
 
 class NotIncludeError(Exception):
     pass
