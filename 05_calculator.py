@@ -25,17 +25,19 @@ def main():
         exit()
     except NotIncludeError as err:
         print('[ERROR]: 演算子が期待したものではありません。+-*/のうちの一つからお選びください')
-        print('[ERROR]: ', str(err))
+        print('[ERROR]: ', str(err), 'is not include a list')
+        exit()
+    except NotMatchArgvError as err:
+        print('[ERROR]:   引数の数が足りません')
+        print('[USAGE]:   python 05_calculator.py [最初の数値][2つ目の数値][演算子(+-*/)]')
+        print('[EXAMPLE]: python 05_calculator.py 2 2 + ')
         exit()
 
 
 def check_validate(args):
     # check args num
     if len(args) < 4:
-        print('[ERROR]:   引数の数が足りません')
-        print('[USAGE]:   python 05_calculator.py [最初の数値][2つ目の数値][演算子(+-*/)]')
-        print('[EXAMPLE]: python 05_calculator.py 2 2 + ')
-        exit()
+        raise NotMatchArgvError()
 
     first = int(args[1])
     second = int(args[2])
@@ -68,6 +70,9 @@ def calculate(first, second, operator):
     print(ans)
 
 class NotIncludeError(Exception):
+    pass
+
+class NotMatchArgvError(Exception):
     pass
 
 main()
