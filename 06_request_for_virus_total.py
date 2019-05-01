@@ -6,6 +6,7 @@
 import urllib.request
 import urllib.error
 import urllib.parse
+import json
 
 import sys
 
@@ -26,5 +27,5 @@ data = urllib.parse.urlencode(param)
 req = urllib.request.Request(virus_total_api_url, data.encode())
 response = urllib.request.urlopen(req)
 
-json = json.loads(response.read().decode('utf-8'))
-print(json)
+j = json.loads(response.read().decode('utf-8'))
+print(j)
