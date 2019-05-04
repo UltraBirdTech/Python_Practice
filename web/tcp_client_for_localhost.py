@@ -7,18 +7,17 @@ target_port = 9999
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 try:
-  # connect to server
-  client.connect((target_host, target_port))
+    # connect to server
+    client.connect((target_host, target_port))
 except ConnectionRefusedError as err:
-  print('[ERROR]: ' + str(err))
-  print('HOST: ' + str(target_host))
-  print('PORT: ' + str(target_port))
-  print('上記のホスト、ポートへのコネクションが確立できませんでした')
-  exit()
+    print('[ERROR]: ' + str(err))
+    print('HOST: ' + str(target_host))
+    print('PORT: ' + str(target_port))
+    print('上記のホスト、ポートへのコネクションが確立できませんでした')
+    exit()
 
 
 # send data
-#client.send(b"GET / HTTP/1.1\r\nHOST: google.com\r\n\r\n")
 client.send(b"ABCDEFG")
 
 # recieve data
