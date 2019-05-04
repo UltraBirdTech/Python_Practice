@@ -27,7 +27,13 @@ def handle_client(client_socket):
     client_socket.close()
 
 while True:
-    client, addr = server.accept()
+    try:
+        client, addr = server.accept()
+    except KeyboardInterrupt as err:
+        print(err)
+        print("'Ctrl + C' が入力されたため処理を終了します")
+        exit()
+
     print("[*] Acceted connection from: %s:%d" % (addr[0], addr[1]))
 
     # A thread of recieve data
