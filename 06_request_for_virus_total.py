@@ -10,22 +10,43 @@ import json
 
 import sys
 
-argv = sys.argv
+VIRUS_TOTAL_REPORT_API_URL = 'https://www.virustotal.com/vtapi/v2/file/report'
 
-if len(argv) < 2:
-    print('[ERROR]: 引数が足りません')
-    exit()
 
-virus_total_api_url = 'https://www.virustotal.com/vtapi/v2/file/report'
+def main():
 
-# api_key
-api_key = 'e7416f0e54656ee951c464471fdea80e33e89e859d798eb158fdd713f7646d72'
+    argv = sys.argv
 
-data_sha256 = argv[1]
-param = {'resource': data_sha256, 'apikey': api_key}
-data = urllib.parse.urlencode(param)
-req = urllib.request.Request(virus_total_api_url, data.encode())
-response = urllib.request.urlopen(req)
+    if len(argv) < 2:
+        print('[ERROR]: 引数が足りません。引数としてファイルのハッシュ値を与えてください。')
+        exit()
 
-j = json.loads(response.read().decode('utf-8'))
-print(j)
+    try:
+        api_key = apikey()
+        response = request(argv[1], api_key)
+        j = json.loads(response.read().decode('utf-8'))
+        print(j)
+    except FileNotFoundError as err:
+        print('[ERROR]: api keyが記述されているファイルが存在しません。')
+        print('[ERROR]: 同じファイルパスに"api_key.txt"を配置してください。')
+
+    except Exception as err:
+        print('[ERROR]: エラーが発生しました。' + str(err))
+
+
+def apikey():
+    api_key_file_path = './api_key.txt'
+    with open(api_key_file_path) as f:
+        read = f.read()
+    api_key = read.replace('\n', '')
+    print('[LOG] api key: ' + api_key)
+    return api_key
+
+
+def request(sha256, api_key):
+    param = {'resource': sha256, 'apikey': api_key}
+    data = urllib.parse.urlencode(param)
+    req = urllib.request.Request(VIRUS_TOTAL_REPORT_API_URL, data.encode())
+    return urllib.request.urlopen(req)
+
+main()
