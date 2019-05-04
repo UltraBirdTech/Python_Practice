@@ -1,5 +1,6 @@
 from random import choice
 
+
 class Pokemon():
     def __init__(self, name, type, moves):
         self.name = name
