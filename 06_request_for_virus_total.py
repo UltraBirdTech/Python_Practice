@@ -28,7 +28,7 @@ def main():
         print(j)
     except FileNotFoundError as err:
         print('[ERROR]: api keyが記述されているファイルが存在しません。')
-        print('[ERROR]: 同じファイルパスに"api_key.txt"を配置してください。')
+        print('[ERROR]: ファイルパスに"api_key.txt"を配置してください。')
 
     except Exception as err:
         print('[ERROR]: エラーが発生しました。' + str(err))
