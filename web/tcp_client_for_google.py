@@ -6,8 +6,11 @@ target_port = 80
 # crate socket object
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-# connect to server
-client.connect((target_host, target_port))
+try:
+    # connect to server
+    client.connect((target_host, target_port))
+except ConnectionRefusedError as err:
+    print('[ERROR]: ' + str(err))
 
 # send data
 client.send(b"GET / HTTP/1.1\r\nHOST: google.com\r\n\r\n")
