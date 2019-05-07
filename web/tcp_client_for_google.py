@@ -11,6 +11,7 @@ try:
     client.connect((target_host, target_port))
 except ConnectionRefusedError as err:
     print('[ERROR]: ' + str(err))
+    exit()
 
 # send data
 client.send(b"GET / HTTP/1.1\r\nHOST: google.com\r\n\r\n")
