@@ -22,6 +22,7 @@ class FreeMember(Member):
         self.status = 'Free'
         super().__init__(name, self.status)
 
+
 class UnsubscribeMember(Member):
     def __init__(self, name):
         self.status = 'Unsubscribe'
