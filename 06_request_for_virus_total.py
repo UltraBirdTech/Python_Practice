@@ -25,7 +25,8 @@ def main():
         api_key = apikey()
         response = request(argv[1], api_key)
         j = json.loads(response.read().decode('utf-8'))
-        print(j)
+        #print(j)
+        display(j)
     except FileNotFoundError as err:
         print('[ERROR]: api keyが記述されているファイルが存在しません。')
         print('[ERROR]: ファイルパスに"api_key.txt"を配置してください。')
@@ -48,5 +49,8 @@ def request(sha256, api_key):
     data = urllib.parse.urlencode(param)
     req = urllib.request.Request(VIRUS_TOTAL_REPORT_API_URL, data.encode())
     return urllib.request.urlopen(req)
+
+def display(j):
+    print(j)
 
 main()
