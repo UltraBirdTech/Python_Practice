@@ -24,8 +24,8 @@ def main():
     try:
         api_key = apikey()
         response = request(argv[1], api_key)
-        j = json.loads(response.read().decode('utf-8'))
-        display(j)
+        data = json.loads(response.read().decode('utf-8'))
+        display(data)
     except FileNotFoundError as err:
         print('[ERROR]: api keyが記述されているファイルが存在しません。')
         print('[ERROR]: ファイルパスに"api_key.txt"を配置してください。')
@@ -49,16 +49,16 @@ def request(sha256, api_key):
     req = urllib.request.Request(VIRUS_TOTAL_REPORT_API_URL, data.encode())
     return urllib.request.urlopen(req)
 
-def display(j):
-    print('[Hash Value]:' + str(j['resource']))
-    print('[Message]:' + str(j['verbose_msg']))
+def display(data):
+    print('[Hash Value]:' + str(data['resource']))
+    print('[Message]:' + str(data['verbose_msg']))
 
-    if j['response_code'] == 0:
+    if data['response_code'] == 0:
         print('[ERROR]: Request is Fail')
         print('ファイルの参照に失敗しました。')
     else:
         print('[SUCCSESS]: Request is Succsess')
-        for k, v in j['scans'].items():
+        for k, v in data['scans'].items():
             print('=' * 50)
             print('Vender Name:' + str(k))
             for key, value in v.items():
