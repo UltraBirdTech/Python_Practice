@@ -25,7 +25,6 @@ def main():
         api_key = apikey()
         response = request(argv[1], api_key)
         j = json.loads(response.read().decode('utf-8'))
-        #print(j)
         display(j)
     except FileNotFoundError as err:
         print('[ERROR]: api keyが記述されているファイルが存在しません。')
@@ -62,10 +61,8 @@ def display(j):
         for k, v in j['scans'].items():
             print('=' * 50)
             print('Vender Name:' + str(k))
-            print('検出:' + str(v['detected']))
-            print('version:' + str(v['version']))
-            print('検査結果:' + str(v['result']))
-            print('更新日時:' + str(v['update']))
+            for key, value in v.items():
+                print(str(key) + ':' + str(v[key]))
 
 
 main()
