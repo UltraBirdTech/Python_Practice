@@ -62,7 +62,7 @@ def display(data):
             print('=' * 50)
             print('Vender Name:' + str(k))
             for key, value in v.items():
-                print(str(key) + ':' + str(v[key]))
+                print(str(key) + ':' + str(value))
 
 
 main()
