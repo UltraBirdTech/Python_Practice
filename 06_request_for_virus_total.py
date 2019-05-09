@@ -54,7 +54,9 @@ def display(j):
     print(j)
     if j['response_code'] == 0:
         print('[ERROR]: Request is Fail')
+        print('[Hash Value]:' + str(j['resource']))
+        print('[Message]:' + str(j['verbose_msg']))
+        print('ファイルの参照に失敗しました。')
     else:
         print('[SUCCSESS]: Request is Succsess')
-
 main()
