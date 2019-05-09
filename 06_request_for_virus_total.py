@@ -51,12 +51,21 @@ def request(sha256, api_key):
     return urllib.request.urlopen(req)
 
 def display(j):
-    print(j)
+    print('[Hash Value]:' + str(j['resource']))
+    print('[Message]:' + str(j['verbose_msg']))
+
     if j['response_code'] == 0:
         print('[ERROR]: Request is Fail')
-        print('[Hash Value]:' + str(j['resource']))
-        print('[Message]:' + str(j['verbose_msg']))
         print('ファイルの参照に失敗しました。')
     else:
         print('[SUCCSESS]: Request is Succsess')
+        for k, v in j['scans'].items():
+            print('=' * 50)
+            print('Vender Name:' + str(k))
+            print('検出:' + str(v['detected']))
+            print('version:' + str(v['version']))
+            print('検査結果:' + str(v['result']))
+            print('更新日時:' + str(v['update']))
+
+
 main()
