@@ -56,7 +56,6 @@ def display(data):
 
     if data['response_code'] == 0:
         print('[ERROR]: Request is Fail')
-        print('ファイルの参照に失敗しました。')
     else:
         print('[SUCCSESS]: Request is Succsess')
         for k, v in data['scans'].items():
