@@ -49,6 +49,7 @@ def request(sha256, api_key):
     req = urllib.request.Request(VIRUS_TOTAL_REPORT_API_URL, data.encode())
     return urllib.request.urlopen(req)
 
+
 def display(data):
     print('[Hash Value]:' + str(data['resource']))
     print('[Message]:' + str(data['verbose_msg']))
