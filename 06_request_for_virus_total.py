@@ -53,6 +53,7 @@ def request(sha256, api_key):
 def display(data):
     print('[Hash Value]:' + str(data['resource']))
     print('[Message]:' + str(data['verbose_msg']))
+    print('検知率:' + str(data['positives']) + '/' + str(data['total']))
 
     if data['response_code'] == 0:
         print('[ERROR]: Request is Fail')
