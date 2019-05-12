@@ -58,7 +58,7 @@ def display(data):
     if data['response_code'] == 0:
         print('[ERROR]: Request is Fail')
     else:
-        print('[SUCCSESS]: Request is Succsess')
+        print('[SUCCESS]: Request is Success')
         for k, v in data['scans'].items():
             print('=' * 50)
             print('Vender Name:' + str(k))
