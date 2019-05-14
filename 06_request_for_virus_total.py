@@ -7,7 +7,6 @@ import urllib.request
 import urllib.error
 import urllib.parse
 import json
-
 import sys
 
 VIRUS_TOTAL_REPORT_API_URL = 'https://www.virustotal.com/vtapi/v2/file/report'
