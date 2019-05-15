@@ -2,6 +2,7 @@
 # 学ぶポイント
 # 1. 外部ライブラリのimport方法
 # 2. 外部へのリクエスト方法
+# 3. エラーの処理
 
 import urllib.request
 import urllib.error
