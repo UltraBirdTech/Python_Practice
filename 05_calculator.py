@@ -19,8 +19,8 @@ def main():
         result = calculate(int(argv[1]), int(argv[2]), argv[3])
     except NotMatchArgvError as err:
         print('[ERROR]:   引数の数が足りません')
-        print('[USAGE]:   python 05_calculator.py [最初の数値][2つ目の数値][演算子(+-*/)]')
-        print('[EXAMPLE]: python 05_calculator.py 2 2 + ')
+        print('[USAGE]:   python calculator.py [最初の数値][2つ目の数値][演算子(+-*/)]')
+        print('[EXAMPLE]: python calculator.py 2 2 + ')
         exit()
     except ValueError as err:
         print('[ERROR]: 計算する値は数値を入力してください。')
