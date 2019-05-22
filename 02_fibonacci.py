@@ -3,17 +3,8 @@
 # 1. 繰り返し文(While)の扱い方
 # 2. 数字リテラルの扱い方
 # 3. 数字リテラつの足し算のやり方
+first, second = 0, 1
 
-FIRST_ELEMENT = 0
-SECOND_ELEMENT = 1
-LIMIT = 10000
-
-first = FIRST_ELEMENT
-second = SECOND_ELEMENT
-temp = 0
-
-while(first <= LIMIT):
+while(first <= 10000):
     print(first)
-    temp = first + second
-    first = second
-    second = temp
+    first, second = second, (first + second)
