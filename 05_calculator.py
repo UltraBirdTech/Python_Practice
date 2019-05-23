@@ -10,7 +10,6 @@ operators = ('+', '-', '*', '/')
 
 
 def main():
-    # recieve args.
     argv = sys.argv
     result = 0
 
@@ -39,15 +38,10 @@ def main():
 
 
 def check_validate(argv):
-    # check argv num
     if len(argv) < 4:
         raise NotMatchArgvError()
 
-    int(argv[1])
-    int(argv[2])
-
     operator = argv[3]
-    # check operator
     if operator not in operators:
         raise NotIncludeError(operator)
 
