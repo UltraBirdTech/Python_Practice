@@ -65,5 +65,5 @@ def display(data):
             for key, value in v.items():
                 print(str(key) + ':' + str(value))
 
-
-main()
+if __name__ == '__main__':
+    main()
