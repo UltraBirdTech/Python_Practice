@@ -13,7 +13,6 @@ class PaidMember(Member):
         self.status = 'Paid'
         super().__init__(name, self.status)
 
-
 class FreeMember(Member):
     def __init__(self, name):
         self.status = 'Free'
