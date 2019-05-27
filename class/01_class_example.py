@@ -7,9 +7,9 @@ class Pokemon():
         self.type = type
         self.moves = moves
 
-    def atack(self):
+    def attack(self):
         print(choice(self.moves))
 
 picachu = Pokemon('Picachu', 'thunder', ['thunder shock', 'iron tail'])
 picachu.name
-picachu.atack()
+picachu.attack()
