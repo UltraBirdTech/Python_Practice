@@ -1,5 +1,11 @@
-data = open('10.txt', 'rt')
-for d in data:
-    print(d, end='')
+with open('10.txt', 'rt') as f:
+    # read()
+    print(f.read())
 
-data.close()
+    # readline()
+    for i in range(1,10):
+       print(f.readline(), end='')
+
+    # 繰り返し
+    for data in f:
+        print(data, end='')
