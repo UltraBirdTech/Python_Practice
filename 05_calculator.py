@@ -60,6 +60,7 @@ def calculate(first, second, operator):
     elif operator == '/':
         ans = first / second
 
+
     else:
         print('[ERROR]: 計算を行うことができませんでした。')
 
