@@ -4,9 +4,7 @@
 # 2. 外部へのリクエスト方法
 # 3. エラーの処理
 
-import urllib.request
-import urllib.error
-import urllib.parse
+import requests
 import json
 import sys
 
@@ -24,7 +22,7 @@ def main():
     try:
         api_key = apikey()
         response = request(argv[1], api_key)
-        data = json.loads(response.read().decode('utf-8'))
+        data = response.json()
         display(data)
     except FileNotFoundError as err:
         print('[ERROR]: api keyが記述されているファイルが存在しません。')
@@ -44,10 +42,9 @@ def apikey():
 
 
 def request(sha256, api_key):
-    param = {'resource': sha256, 'apikey': api_key}
-    data = urllib.parse.urlencode(param)
-    req = urllib.request.Request(VIRUS_TOTAL_REPORT_API_URL, data.encode())
-    return urllib.request.urlopen(req)
+    params = {'resource': sha256, 'apikey': api_key}
+    response = requests.get(VIRUS_TOTAL_REPORT_API_URL, params=params)
+    return response
 
 
 def display(data):
