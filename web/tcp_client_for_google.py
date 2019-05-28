@@ -1,6 +1,6 @@
 import socket
 
-target_host = 'www.google.com'
+target_host = 'google.co.jp'
 target_port = 80
 
 # crate socket object
