@@ -20,7 +20,7 @@ def main():
 
     try:
         response = request(argv[1])
-        check_response(response)
+        check_status_code(response.status_code)
         data = response.json()
         display(data)
     except FileNotFoundError as err:
@@ -49,8 +49,7 @@ def request(sha256):
     return response
 
 
-def check_response(data):
-    status_code = data.status_code
+def check_status_code(status_code):
     if status_code == 200:
         return
 
