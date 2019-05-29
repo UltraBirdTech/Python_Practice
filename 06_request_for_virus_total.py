@@ -19,8 +19,7 @@ def main():
         exit()
 
     try:
-        api_key = apikey()
-        response = request(argv[1], api_key)
+        response = request(argv[1])
         data = response.json()
         display(data)
     except FileNotFoundError as err:
@@ -40,8 +39,8 @@ def apikey():
     return api_key
 
 
-def request(sha256, api_key):
-    params = {'resource': sha256, 'apikey': api_key}
+def request(sha256):
+    params = {'resource': sha256, 'apikey': apikey()}
     response = requests.get(VIRUS_TOTAL_REPORT_API_URL, params=params)
     return response
 
