@@ -20,12 +20,17 @@ def main():
 
     try:
         response = request(argv[1])
+
+        check_response(response)
         data = response.json()
         display(data)
     except FileNotFoundError as err:
         print('[ERROR]: api keyが記述されているファイルが存在しません。')
         print('[ERROR]: ファイルパスに"api_key.txt"を配置してください。')
-
+    except RequestError as err:
+        reference_url =  'https://developers.virustotal.com/reference#api-responses'
+        print('[ERROR]: ' + str(err.status_code))
+        print('[USAGE]: ' + 'Please show API reference "' + reference_url + '"')
     except Exception as err:
         print('[ERROR]: エラーが発生しました。' + str(err))
 
@@ -45,6 +50,14 @@ def request(sha256):
     return response
 
 
+def check_response(data):
+    status_code = data.status_code
+    if status_code == 200:
+        return
+
+    raise RequestError(status_code)
+
+
 def display(data):
     print('[Hash Value]:' + str(data['resource']))
     print('[Message]:' + str(data['verbose_msg']))
@@ -59,6 +72,11 @@ def display(data):
             print('Vender Name:' + str(k))
             for key, value in v.items():
                 print(str(key) + ':' + str(value))
+
+class RequestError(Exception):
+    def __init__(self, status_code):
+        self.status_code = status_code
+
 
 if __name__ == '__main__':
     main()
