@@ -20,7 +20,6 @@ def main():
 
     try:
         response = request(argv[1])
-
         check_response(response)
         data = response.json()
         display(data)
