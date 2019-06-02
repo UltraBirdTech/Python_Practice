@@ -18,18 +18,18 @@ class Pokemon():
 
 class Pikachu(Pokemon):
     def __init__(self, moves):
-        self.name = 'Pikachu'
-        self.attribute = 'thunder'
-        self.moves = moves
-        super().__init__(self.name, self.attribute, self.moves)
+        name = 'Pikachu'
+        attribute = 'thunder'
+        moves = moves
+        super().__init__(name, attribute, moves)
 
 class Garura(Pokemon):
     def __init__(self, moves):
-        self.name = 'Garura'
-        self.attribute = 'normal'
-        self.moves = moves
-        self.mega = True
-        super().__init__(self.name, self.attribute, self.moves, self.mega)
+        name = 'Garura'
+        attribute = 'normal'
+        moves = moves
+        mega = True
+        super().__init__(name, attribute, moves, mega)
 
 p1 = Pikachu(['thunder shock', 'iron tail', 'Volt Tackle', 'Grass Knot'])
 print(p1.name + '=' * 20)
