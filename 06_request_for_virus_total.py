@@ -29,7 +29,7 @@ def main():
     except RequestError as err:
         reference_url =  'https://developers.virustotal.com/reference#api-responses'
         print('[ERROR]: ' + str(err.status_code))
-        print('[USAGE]: ' + 'Please show API reference "' + reference_url + '"')
+        print('[USAGE]: ' + 'Please look API reference "' + reference_url + '"')
     except Exception as err:
         print('[ERROR]: エラーが発生しました。' + str(err))
 
