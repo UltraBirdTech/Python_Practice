@@ -13,20 +13,20 @@ class Member():
 
 class PaidMember(Member):
     def __init__(self, name):
-        self.status = 'Paid'
-        super().__init__(name, self.status)
+        status = 'Paid'
+        super().__init__(name, status)
 
 
 class FreeMember(Member):
     def __init__(self, name):
-        self.status = 'Free'
-        super().__init__(name, self.status)
+        status = 'Free'
+        super().__init__(name, status)
 
 
 class UnsubscribeMember(Member):
     def __init__(self, name):
-        self.status = 'Unsubscribe'
-        super().__init__(name, self.status)
+        status = 'Unsubscribe'
+        super().__init__(name, status)
 
     def introduction(self):
         print(self.name + 'は退会しています。自己紹介機能は提供しません。')

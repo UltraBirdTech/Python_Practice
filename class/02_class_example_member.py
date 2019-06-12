@@ -10,13 +10,13 @@ class Member():
 
 class PaidMember(Member):
     def __init__(self, name):
-        self.status = 'Paid'
-        super().__init__(name, self.status)
+        status = 'Paid'
+        super().__init__(name, status)
 
 class FreeMember(Member):
     def __init__(self, name):
-        self.status = 'Free'
-        super().__init__(name, self.status)
+        status = 'Free'
+        super().__init__(name, status)
 
 yamada = PaidMember('Yamada')
 yamada.introduction()
