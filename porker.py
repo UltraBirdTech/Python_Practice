@@ -54,8 +54,7 @@ class Player():
         self.hand.add(deck.draw())
 
     def cut(self, num):
-        #self.hand.cut()
-        del self.hand.hand[int(num)]
+        self.hand.cut(int(num))
 
     def exchange(self, deck):
         input_value = input()
@@ -170,6 +169,9 @@ class Hand():
 
     def add(self, card):
         self.hand.append(card)
+
+    def cut(self, num):
+        del self.hand[num]
 
 main()
 
