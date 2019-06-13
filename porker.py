@@ -65,24 +65,6 @@ class Player():
         for i in range(len(self.hand.all()), self.hand.max_hand):
             self.draw(deck)
 
-    def print_my_hand(self):
-        self.hand.print_my_hand()
-
-    def get_numbers(self):
-        numbers = []
-        for c in self.hand.all():
-            numbers.append(c.num)
-        return numbers
-
-    def get_numbers_as_int(self):
-        numbers = []
-        for c in self.hand.all():
-            numbers.append(int(c.card_number()))
-        return numbers
-        
-    def print_porker_hand(self, result):
-        print('My Poker Hand is ' + result)
-
     def check_poker_hand(self):
         self.hand.check_porker_hand()
         return
@@ -121,26 +103,6 @@ class Player():
     def is_royal(self):
         return ['10', 'J', 'Q', 'K', 'A'].sort() == self.get_numbers().sort()
 
-    def check_straight(self, check_after=False):
-        numbers = self.get_numbers_as_int()
-        numbers.sort()
-        result = numbers == range(numbers[0], 5)
-        if result and not check_after:
-            self.print_porker_hand('Straight')
-
-        return result
-
-    def check_flash(self, check_after=False):
-        suites = []
-        for h in self.hand.all():
-            suites.append(h.suite)
-        
-        result = (len(set(suites)) == 1) # 重複をはじいた結果が1であればフラッシュ
-        if result and not check_after:
-            self.print_porker_hand('Flash')
-
-        return result
-
 
     def check_four_card(self):
         pass
@@ -153,13 +115,6 @@ class Player():
 
     def check_two_pair(self):
         pass
-
-    def check_one_pair(self):
-        numbers = self.get_numbers()
-        result = len(set(numbers)) == 4
-        if result:
-            self.print_porker_hand('One Pair!!')
-        return result
 
 class Hand():
     def __init__(self):
