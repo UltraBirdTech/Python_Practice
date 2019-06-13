@@ -51,9 +51,10 @@ class Player():
             self.draw(deck)
 
     def draw(self, deck):
-        self.hand.hand.append(deck.draw())
+        self.hand.add(deck.draw())
 
     def cut(self, num):
+        #self.hand.cut()
         del self.hand.hand[int(num)]
 
     def exchange(self, deck):
@@ -166,6 +167,9 @@ class Hand():
     def __init__(self):
         self.max_hand = 5
         self.hand = []
+
+    def add(self, card):
+        self.hand.append(card)
 
 main()
 
