@@ -84,6 +84,8 @@ class Player():
         print('My Poker Hand is ' + result)
 
     def check_poker_hand(self):
+        self.hand.check_porker_hand()
+        return
         if self.check_straight_flash():
             return 
         if self.check_straight():
@@ -178,22 +180,67 @@ class Hand():
             print('[' + c.value + ']', end='')
         print()
 
+    def check_porker_hand(self):
+        Check(self)
+
+    def get_numbers(self):
+        numbers = []
+        for c in self.hand:
+            numbers.append(c.num)
+        return numbers
+
+
 
 class Check():
-    pass
+    def __init__(self, hand):
+        print(hand)
+        Flash().check(hand)
+        OnePair().check(hand)
+
 
 class PorkerHand():
     def __init__(self, result):
         self.result = result
 
-    def check_conditions(self):
+    def check_conditions(self, hand):
         print('You should write about conditions')
 
     def print_result(self):
         print('My hand is ' + self.result)
 
-    def check(self):
-        self.check_conditions()
+    def check(self, hand):
+        self.check_conditions(hand)
+
+
+class Flash(PorkerHand):
+    def __init__(self):
+        super().__init__('Flash')
+
+    def check_conditions(self, hand, after_check=False):
+        suites = []
+        for h in hand.all():
+            suites.append(h.suite)
+        
+        result = (len(set(suites)) == 1) # 重複をはじいた結果が1であればフラッシュ
+        if result and not check_after:
+            #self.print_porker_hand('Flash')
+            self.print_result()
+
+        return result
+
+
+class OnePair(PorkerHand):
+    def __init__(self):
+       super().__init__('OnePair')
+
+    def check_conditions(self, hand):
+        numbers = hand.get_numbers()
+        result = len(set(numbers)) == 4
+        if result:
+            self.print_result()
+        return result
+
+
 
 main()
 
