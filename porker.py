@@ -185,5 +185,8 @@ class PorkerHand():
     def print_result(self):
         print('My hand is ' + self.result)
 
+    def check(self):
+        self.check_conditions()
+
 main()
 
