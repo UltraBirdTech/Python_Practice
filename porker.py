@@ -65,6 +65,9 @@ class Player():
         for i in range(len(self.hand.all()), self.hand.max_hand):
             self.draw(deck)
 
+    def print_my_hand(self):
+        self.hand.print_my_hand()
+
     def check_poker_hand(self):
         self.hand.check_porker_hand()
         return
@@ -159,10 +162,23 @@ class Hand():
 
 class Check():
     def __init__(self, hand):
-        print(hand)
-        Flash().check(hand)
-        Straight().check(hand)
-        OnePair().check(hand)
+        flash = Flash()
+        flash.check(hand)
+        
+        straight = Straight()
+        straight.check(hand)
+        
+        if flash.result and straight.result:
+            pass
+
+        one_pair = OnePair()
+        one_pair.check(hand)
+        if one_pair.result:
+            one_pair.print_porker_hand()
+
+
+        print('PE☆KE')
+        
 
 
 
@@ -176,8 +192,6 @@ class PorkerHand():
 
     def check(self, hand):
         self.check_conditions(hand)
-        if self.result:
-            self.print_porker_hand()
 
     def print_porker_hand(self):
         print('My hand is ' + self.porker_hand)
