@@ -46,12 +46,12 @@ class Deck():
 class Player():
     def __init__(self, deck):
         self.max_hand = 5
-        self.hand = []
-        for i in range(0, self.max_hand):
+        self.hand = Hand()
+        for i in range(0, self.hand.max_hand):
             self.draw(deck)
 
     def draw(self, deck):
-        self.hand.append(deck.draw())
+        self.hand.hand.append(deck.draw())
 
     def cut(self, num):
         del self.hand[int(num)]
@@ -161,6 +161,11 @@ class Player():
         if result:
             self.print_porker_hand('One Pair!!')
         return result
+
+class Hand():
+    def __init__(self):
+        self.max_hand = 5
+        self.hand = []
 
 main()
 
