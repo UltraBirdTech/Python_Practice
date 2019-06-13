@@ -91,22 +91,6 @@ class Player():
         self.print_porker_hand('PE☆KE')
 
 
-    def check_straight_flash(self):
-        if not self.check_straight(True):
-            return
-
-        if not self.check_flash(True):
-            return
-
-        if self.is_royal():
-            self.print_porker_hand('Royal Straight Flash')
-        else:
-            self.print_porker_hand('Straight Flash')
-
-    def is_royal(self):
-        return ['10', 'J', 'Q', 'K', 'A'].sort() == self.get_numbers().sort()
-
-
     def check_four_card(self):
         pass
 
@@ -196,6 +180,19 @@ class PorkerHand():
     def print_porker_hand(self):
         print('My hand is ' + self.porker_hand)
 
+class RoyalStraightFlash(PorkerHand):
+    def __init__(self):
+        super().__init__('RoyalStraightFlash')
+
+    def check_conditions(self, hand):
+        if self.is_royal(hand):
+            self.porker_hand = 'StraightFlash'
+        
+        self.result = True
+        
+
+    def is_royal(self, hand):
+        return ['10', 'J', 'Q', 'K', 'A'].sort() == hand.get_numbers().sort()
 
 class Flash(PorkerHand):
     def __init__(self):
