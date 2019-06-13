@@ -176,11 +176,14 @@ class Hand():
         return self.hand
 
 class PorkerHand():
-    def __init__():
-        pass
+    def __init__(self, result):
+        self.result = result
 
     def check_conditions(self):
         print('You should write about conditions')
+
+    def print_result(self):
+        print('My hand is ' + self.result)
 
 main()
 
