@@ -54,7 +54,7 @@ class Player():
         self.hand.hand.append(deck.draw())
 
     def cut(self, num):
-        del self.hand[int(num)]
+        del self.hand.hand[int(num)]
 
     def exchange(self, deck):
         input_value = input()
@@ -63,23 +63,23 @@ class Player():
         for i in input_list:
             self.cut(i)
         
-        for i in range(len(self.hand), self.max_hand):
+        for i in range(len(self.hand.hand), self.max_hand):
             self.draw(deck)
 
     def print_my_hand(self):
-        for c in self.hand:
+        for c in self.hand.hand:
             print('[' + c.value + ']', end='')
         print()
 
     def get_numbers(self):
         numbers = []
-        for c in self.hand:
+        for c in self.hand.hand:
             numbers.append(c.num)
         return numbers
 
     def get_numbers_as_int(self):
         numbers = []
-        for c in self.hand:
+        for c in self.hand.hand:
             numbers.append(int(c.card_number()))
         return numbers
         
@@ -133,7 +133,7 @@ class Player():
 
     def check_flash(self, check_after=False):
         suites = []
-        for h in self.hand:
+        for h in self.hand.hand:
             suites.append(h.suite)
         
         result = (len(set(suites)) == 1) # 重複をはじいた結果が1であればフラッシュ
