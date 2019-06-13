@@ -66,9 +66,7 @@ class Player():
             self.draw(deck)
 
     def print_my_hand(self):
-        for c in self.hand.all():
-            print('[' + c.value + ']', end='')
-        print()
+        self.hand.print_my_hand()
 
     def get_numbers(self):
         numbers = []
@@ -174,6 +172,12 @@ class Hand():
 
     def all(self):
         return self.hand
+
+    def print_my_hand(self):
+        for c in self.hand:
+            print('[' + c.value + ']', end='')
+        print()
+
 
 class Check():
     pass
