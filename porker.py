@@ -175,5 +175,9 @@ class Hand():
     def all(self):
         return self.hand
 
+class PorkerHand():
+    def __init__():
+        pass
+
 main()
 
