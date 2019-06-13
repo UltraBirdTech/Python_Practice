@@ -189,45 +189,61 @@ class Hand():
             numbers.append(c.num)
         return numbers
 
+    def get_numbers_as_int(self):
+        numbers = []
+        for c in self.hand:
+            numbers.append(int(c.card_number()))
+        return numbers
+ 
+    def get_all_suites(self):
+        suites = []
+        for h in self.hand:
+            suites.append(h.suite)
+        return suites
 
 
 class Check():
     def __init__(self, hand):
         print(hand)
         Flash().check(hand)
+        Straight().check(hand)
         OnePair().check(hand)
 
 
+
 class PorkerHand():
-    def __init__(self, result):
-        self.result = result
+    def __init__(self, porker_hand):
+        self.porker_hand = porker_hand 
+        self.result = False
 
     def check_conditions(self, hand):
-        print('You should write about conditions')
-
-    def print_result(self):
-        print('My hand is ' + self.result)
+        print('You should write about conditions for each class.')
 
     def check(self, hand):
         self.check_conditions(hand)
+        if self.result:
+            self.print_porker_hand()
+
+    def print_porker_hand(self):
+        print('My hand is ' + self.porker_hand)
 
 
 class Flash(PorkerHand):
     def __init__(self):
         super().__init__('Flash')
 
-    def check_conditions(self, hand, after_check=False):
-        suites = []
-        for h in hand.all():
-            suites.append(h.suite)
-        
-        result = (len(set(suites)) == 1) # 重複をはじいた結果が1であればフラッシュ
-        if result and not check_after:
-            #self.print_porker_hand('Flash')
-            self.print_result()
+    def check_conditions(self, hand):
+        suites = hand.get_all_suites() 
+        self.result = (len(set(suites)) == 1) # 重複をはじいた結果が1であればフラッシュ
 
-        return result
+class Straight(PorkerHand):
+    def __init__(self):
+        super().__init__('Straight')
 
+    def check_conditions(self, hand):
+        numbers = hand.get_numbers_as_int()
+        numbers.sort()
+        self.result = numbers == range(numbers[0], 5)
 
 class OnePair(PorkerHand):
     def __init__(self):
@@ -235,11 +251,7 @@ class OnePair(PorkerHand):
 
     def check_conditions(self, hand):
         numbers = hand.get_numbers()
-        result = len(set(numbers)) == 4
-        if result:
-            self.print_result()
-        return result
-
+        self.result = len(set(numbers)) == 4
 
 
 main()
