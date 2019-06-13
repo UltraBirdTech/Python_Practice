@@ -179,5 +179,8 @@ class PorkerHand():
     def __init__():
         pass
 
+    def check_conditions(self):
+        print('You should write about conditions')
+
 main()
 
