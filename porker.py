@@ -180,13 +180,13 @@ class PorkerHand():
     def print_porker_hand(self):
         print('My hand is ' + self.porker_hand)
 
-class RoyalStraightFlash(PorkerHand):
+class StraightFlash(PorkerHand):
     def __init__(self):
-        super().__init__('RoyalStraightFlash')
+        super().__init__('StraightFlash')
 
     def check_conditions(self, hand):
         if self.is_royal(hand):
-            self.porker_hand = 'StraightFlash'
+            self.porker_hand = 'RoyalStraightFlash'
         
         self.result = True
         
