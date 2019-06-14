@@ -123,7 +123,7 @@ class Hand():
         print()
 
     def check_porker_hand(self):
-        Check(self)
+        Check().check(self)
 
     def get_numbers(self):
         numbers = []
@@ -145,23 +145,27 @@ class Hand():
 
 
 class Check():
-    def __init__(self, hand):
-        flash = Flash()
-        flash.check(hand)
+    def __init__(self):
+        self.initialize_porker_hands()
+
+    def check(self, hand):
+        self.flash.check(hand)
+        self.straight.check(hand)
         
-        straight = Straight()
-        straight.check(hand)
-        
-        if flash.result and straight.result:
+        if self.flash.result and self.straight.result:
             pass
 
-        one_pair = OnePair()
-        one_pair.check(hand)
-        if one_pair.result:
-            one_pair.print_porker_hand()
+        self.one_pair.check(hand)
+        if self.one_pair.result:
+            self.one_pair.print_porker_hand()
 
 
         print('PE☆KE')
+
+    def initialize_porker_hands(self):
+        self.flash = Flash()
+        self.straight = Straight()
+        self.one_pair = OnePair()
         
 
 
