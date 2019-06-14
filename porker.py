@@ -62,8 +62,6 @@ class Player():
         input_list.reverse()
         for i in input_list:
             self.cut(i)
-        
-        for i in range(len(self.hand.all()), self.hand.max_hand):
             self.draw(deck)
 
     def print_my_hand(self):
