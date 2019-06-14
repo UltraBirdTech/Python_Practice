@@ -137,6 +137,10 @@ class Check():
         if self.four_card.result:
             return self.four_card
 
+        self.three_card.check(hand)
+        if self.three_card.result:
+            return self.three_card
+
         self.one_pair.check(hand)
         if self.one_pair.result:
             return self.one_pair 
@@ -148,6 +152,7 @@ class Check():
         self.flash = Flash()
         self.straight = Straight()
         self.four_card = FourCard()
+        self.three_card = ThreeCard()
         self.one_pair = OnePair()
         self.peke = Peke()
 
@@ -206,10 +211,19 @@ class FourCard(PorkerHand):
         super().__init__('FourCard')
 
     def check_conditions(self, hand):
-        hand.print_my_hand()
         numbers = hand.get_numbers_as_int()
         for num in numbers:
             if numbers.count(num) == 4:
+               self.result = True
+
+class ThreeCard(PorkerHand):
+    def __init__(self):
+        super().__init__('ThreeCard')
+
+    def check_conditions(self, hand):
+        numbers = hand.get_numbers_as_int()
+        for num in numbers:
+            if numbers.count(num) == 3:
                self.result = True
 
 class OnePair(PorkerHand):
