@@ -119,6 +119,7 @@ class Check():
         self.initialize_porker_hands()
 
     def check(self, hand):
+#        hand.hand = [Card('♠', '4'), Card('♣', '3'), Card('♥', '4'), Card('♦', '4'), Card('♠', '5')]
         self.flash.check(hand)
         self.straight.check(hand)
 
@@ -132,6 +133,10 @@ class Check():
         if self.straight.result:
             return self.straight 
 
+        self.four_card.check(hand)
+        if self.four_card.result:
+            return self.four_card
+
         self.one_pair.check(hand)
         if self.one_pair.result:
             return self.one_pair 
@@ -142,6 +147,7 @@ class Check():
         self.straight_flash = StraightFlash()
         self.flash = Flash()
         self.straight = Straight()
+        self.four_card = FourCard()
         self.one_pair = OnePair()
         self.peke = Peke()
 
@@ -194,6 +200,17 @@ class Straight(PorkerHand):
         numbers = hand.get_numbers_as_int()
         numbers.sort()
         self.result = numbers == range(numbers[0], 5)
+
+class FourCard(PorkerHand):
+    def __init__(self):
+        super().__init__('FourCard')
+
+    def check_conditions(self, hand):
+        hand.print_my_hand()
+        numbers = hand.get_numbers_as_int()
+        for num in numbers:
+            if numbers.count(num) == 4:
+               self.result = True
 
 class OnePair(PorkerHand):
     def __init__(self):
