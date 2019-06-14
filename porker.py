@@ -7,6 +7,7 @@ def main():
     player.exchange(deck)
     player.print_my_hand()
     player.check_poker_hand()
+    player.print_result()
 
 class Card():
     def __init__(self, suite, num):
@@ -68,6 +69,9 @@ class Player():
     def print_my_hand(self):
         self.hand.print_my_hand()
 
+    def print_result(self):
+        self.hand.porker_hand.display()
+
     def check_poker_hand(self):
         self.hand.check_porker_hand()
         return
@@ -123,7 +127,7 @@ class Hand():
         print()
 
     def check_porker_hand(self):
-        Check().check(self)
+        self.porker_hand = Check().check(self)
 
     def get_numbers(self):
         numbers = []
@@ -154,30 +158,27 @@ class Check():
 
         self.royal_straight_flash.check(hand, self.flash.result, self.straight.result)
         if self.royal_straight_flash.result:
-            self.royal_straight_flash.print_porker_hand()
-            return
+            return self.royal_straight_flash
 
         if self.flash.result:
-            self.flash.print_porker_hand()
-            return
-
+            return self.flash
+            
         if self.straight.result:
-            self.straight.print_porker_hand()
-            return
+            return self.straight 
 
         self.one_pair.check(hand)
         if self.one_pair.result:
-            self.one_pair.print_porker_hand()
-            return
+            return self.one_pair 
 
 
-        print('PE☆KE')
+        return self.peke
 
     def initialize_porker_hands(self):
         self.royal_straight_flash = StraightFlash()
         self.flash = Flash()
         self.straight = Straight()
         self.one_pair = OnePair()
+        self.peke = Peke()
 
 class PorkerHand():
     def __init__(self, porker_hand):
@@ -190,7 +191,7 @@ class PorkerHand():
     def check(self, hand):
         self.check_conditions(hand)
 
-    def print_porker_hand(self):
+    def display(self):
         print('My hand is ' + self.porker_hand)
 
 class StraightFlash(PorkerHand):
@@ -198,8 +199,6 @@ class StraightFlash(PorkerHand):
         super().__init__('StraightFlash')
 
     def check_conditions(self, hand, straight_result, flash_result):
-        print(straight_result)
-        print(flash_result)
         if not (straight_result and flash_result):
             return
 
@@ -238,6 +237,13 @@ class OnePair(PorkerHand):
     def check_conditions(self, hand):
         numbers = hand.get_numbers()
         self.result = len(set(numbers)) == 4
+
+class Peke(PorkerHand):
+    def __init__(self):
+        super().__init__('PEKE')
+
+    def display(self):
+        print('PE☆KE')
 
 
 main()
