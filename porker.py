@@ -124,9 +124,9 @@ class Check():
         self.flash.check(hand)
         self.straight.check(hand)
 
-        self.royal_straight_flash.check(hand, self.flash.result, self.straight.result)
-        if self.royal_straight_flash.result:
-            return self.royal_straight_flash
+        self.straight_flash.check(hand, self.flash.result, self.straight.result)
+        if self.straight_flash.result:
+            return self.straight_flash
 
         if self.flash.result:
             return self.flash
@@ -141,7 +141,7 @@ class Check():
         return self.peke
 
     def initialize_porker_hands(self):
-        self.royal_straight_flash = StraightFlash()
+        self.straight_flash = StraightFlash()
         self.flash = Flash()
         self.straight = Straight()
         self.one_pair = OnePair()
