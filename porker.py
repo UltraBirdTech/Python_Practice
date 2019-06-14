@@ -74,38 +74,6 @@ class Player():
 
     def check_poker_hand(self):
         self.hand.check_porker_hand()
-        return
-        if self.check_straight_flash():
-            return 
-        if self.check_straight():
-            return
-        if self.check_flash():
-            return
-        if self.check_four_card():
-            return
-        if self.check_full_house():
-            return
-        if self.check_three_card():
-            return
-        if self.check_two_pair():
-            return
-        if self.check_one_pair():
-            return
-        
-        self.print_porker_hand('PE☆KE')
-
-
-    def check_four_card(self):
-        pass
-
-    def check_full_house(self):
-        pass
-
-    def check_three_card(self):
-        pass
-
-    def check_two_pair(self):
-        pass
 
 class Hand():
     def __init__(self):
@@ -169,7 +137,6 @@ class Check():
         self.one_pair.check(hand)
         if self.one_pair.result:
             return self.one_pair 
-
 
         return self.peke
 
