@@ -151,24 +151,33 @@ class Check():
     def check(self, hand):
         self.flash.check(hand)
         self.straight.check(hand)
-        
-        if self.flash.result and self.straight.result:
-            pass
+
+        self.royal_straight_flash.check(hand, self.flash.result, self.straight.result)
+        if self.royal_straight_flash.result:
+            self.royal_straight_flash.print_porker_hand()
+            return
+
+        if self.flash.result:
+            self.flash.print_porker_hand()
+            return
+
+        if self.straight.result:
+            self.straight.print_porker_hand()
+            return
 
         self.one_pair.check(hand)
         if self.one_pair.result:
             self.one_pair.print_porker_hand()
+            return
 
 
         print('PE☆KE')
 
     def initialize_porker_hands(self):
+        self.royal_straight_flash = StraightFlash()
         self.flash = Flash()
         self.straight = Straight()
         self.one_pair = OnePair()
-        
-
-
 
 class PorkerHand():
     def __init__(self, porker_hand):
@@ -188,12 +197,19 @@ class StraightFlash(PorkerHand):
     def __init__(self):
         super().__init__('StraightFlash')
 
-    def check_conditions(self, hand):
+    def check_conditions(self, hand, straight_result, flash_result):
+        print(straight_result)
+        print(flash_result)
+        if not (straight_result and flash_result):
+            return
+
         if self.is_royal(hand):
             self.porker_hand = 'RoyalStraightFlash'
         
         self.result = True
-        
+
+    def check(self, hand, straight_result, flash_result):
+        self.check_conditions(hand, straight_result, flash_result)
 
     def is_royal(self, hand):
         return ['10', 'J', 'Q', 'K', 'A'].sort() == hand.get_numbers().sort()
