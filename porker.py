@@ -119,7 +119,7 @@ class Check():
         self.initialize_porker_hands()
 
     def check(self, hand):
-#        hand.hand = [Card('♠', '4'), Card('♣', '3'), Card('♥', '2'), Card('♦', '5'), Card('♠', '6')]
+        hand.hand = [Card('♠', '1'), Card('♣', 'Q'), Card('♥', 'J'), Card('♦', '10'), Card('♠', 'K')]
         hand.print_my_hand()
         self.flash.check(hand)
         self.straight.check(hand)
@@ -205,7 +205,14 @@ class Straight(PorkerHand):
     def check_conditions(self, hand):
         numbers = hand.get_numbers_as_int()
         numbers.sort()
-        number_list = list(range(numbers[0], numbers[0] + 5))
+        number_list = []
+        if numbers[1] == 10:
+            number_list = list(range(numbers[1], numbers[1] + 4))
+            number_list.insert(0,1)
+        else:
+            number_list = list(range(numbers[0], numbers[0] + 5))
+        print(numbers)
+        print(number_list)
         self.result = (numbers == number_list)
 
 class FourCard(PorkerHand):
