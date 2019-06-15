@@ -119,7 +119,7 @@ class Check():
         self.initialize_porker_hands()
 
     def check(self, hand):
-        hand.hand = [Card('♠', '1'), Card('♣', '1'), Card('♥', 'J'), Card('♦', 'J'), Card('♠', 'K')]
+        hand.hand = [Card('♠', '3'), Card('♣', '1'), Card('♥', 'J'), Card('♦', 'J'), Card('♠', 'K')]
         hand.print_my_hand()
         self.flash.check(hand)
         self.straight.check(hand)
@@ -229,6 +229,7 @@ class FourCard(PorkerHand):
                self.result = True
                break
 
+
 class ThreeCard(PorkerHand):
     def __init__(self):
         super().__init__('ThreeCard')
@@ -240,34 +241,38 @@ class ThreeCard(PorkerHand):
                self.result = True
                break
 
-class TwoPair(PorkerHand):
+class Pair(PorkerHand):
+    def __init__(self, porker_hand):
+        super().__init__(porker_hand)
+
+    def check_pair(self, hand):
+        numbers = hand.get_numbers()
+        check_dict = {}
+        for n in numbers:
+            if n in check_dict:
+                check_dict[n] += 1
+            else:
+                check_dict[n] = 1
+        self.result = list(check_dict.values()).count(2) == self.pair_num
+
+
+class TwoPair(Pair):
     def __init__(self):
        super().__init__('TwoPair')
+       self.pair_num = 2
 
     def check_conditions(self, hand):
-        numbers = hand.get_numbers()
-        check_dict = {}
-        for n in numbers:
-            if n in check_dict:
-                check_dict[n] += 1
-            else:
-                check_dict[n] = 1
-        self.result = list(check_dict.values()).count(2) == 2
+        self.check_pair(hand)
+        return
 
-
-class OnePair(PorkerHand):
+class OnePair(Pair):
     def __init__(self):
        super().__init__('OnePair')
+       self.pair_num = 1
 
     def check_conditions(self, hand):
-        numbers = hand.get_numbers()
-        check_dict = {}
-        for n in numbers:
-            if n in check_dict:
-                check_dict[n] += 1
-            else:
-                check_dict[n] = 1
-        self.result = list(check_dict.values()).count(2) == 1
+        self.check_pair(hand)
+        return
 
 class Peke(PorkerHand):
     def __init__(self):
