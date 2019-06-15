@@ -6,6 +6,8 @@ def main():
     player.print_my_hand()
     player.exchange(deck)
     player.print_my_hand()
+    player.exchange(deck)
+    player.print_my_hand()
     player.check_poker_hand()
     player.print_result()
 
