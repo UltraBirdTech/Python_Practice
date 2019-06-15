@@ -139,6 +139,12 @@ class Check():
             return self.four_card
 
         self.three_card.check(hand)
+        self.one_pair.check(hand)
+
+        self.full_house.check(hand, self.one_pair.result, self.three_card.result)
+        if self.full_house.result:
+            return self.full_house
+ 
         if self.three_card.result:
             return self.three_card
 
@@ -146,7 +152,6 @@ class Check():
         if self.two_pair.result:
             return self.two_pair
 
-        self.one_pair.check(hand)
         if self.one_pair.result:
             return self.one_pair 
 
@@ -157,6 +162,7 @@ class Check():
         self.flash = Flash()
         self.straight = Straight()
         self.four_card = FourCard()
+        self.full_house = FullHouse()
         self.three_card = ThreeCard()
         self.two_pair = TwoPair()
         self.one_pair = OnePair()
@@ -229,6 +235,15 @@ class FourCard(PorkerHand):
                self.result = True
                break
 
+class FullHouse(PorkerHand):
+    def __init__(self):
+        super().__init__('FullHouse')
+
+    def check_conditions(self, hand, onepair_result, three_card_result):
+        self.result = (onepair_result and three_card_result)
+
+    def check(self, hand, onepair_result, three_card_result):
+        self.check_conditions(hand, onepair_result, three_card_result)
 
 class ThreeCard(PorkerHand):
     def __init__(self):
