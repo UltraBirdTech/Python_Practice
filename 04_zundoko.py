@@ -1,15 +1,15 @@
 import random
 
 zundoko = ('ズン', 'ドコ')
-array = []
+zundoko_array = []
 while(True):
-    array.append(random.choice(zundoko))
-    print(array[-1])
-    if len(array) >= 5:
-        s = ''.join(array)
+    zundoko_array.append(random.choice(zundoko))
+    print(zundoko_array[-1])
+    if len(zundoko_array) >= 5:
+        s = ''.join(zundoko_array)
         if s == 'ズンズンズンズンドコ':
             print(s)
             print('KI・YO・SHI')
             break
 
-        del array[0]
+        del zundoko_array[0]
