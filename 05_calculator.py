@@ -47,25 +47,21 @@ def check_validate(argv):
 
 
 def calculate(first, second, operator):
-    ans = 0
     if operator == '+':
-        ans = first + second
+        return first + second
 
     elif operator == '-':
-        ans = first - second
+        return first - second
 
     elif operator == '*':
-        ans = first * second
+        return first * second
 
     elif operator == '/':
-        ans = first / second
-
+        return first / second
 
     else:
         # 事前に演算子チェックをしているため、ここには到達しない
         raise NotIncludeError(operator)
-
-    return ans
 
 
 class NotIncludeError(Exception):
