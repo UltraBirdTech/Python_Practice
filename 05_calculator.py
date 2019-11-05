@@ -27,7 +27,7 @@ def main():
         print('[ERROR]: 演算子が期待したものではありません。+-*/のうちの一つからお選びください')
         print('[ERROR]: "', str(err), '" is not include a list')
     except ZeroDivisionError as err:
-        print('[ERROR]: 割り算を行う際に0徐算が発生しました。第二引数を1以上の数値にしてください。')
+        print('[ERROR]: 割り算を行う際に0徐算が発生しました。第2引数を1以上の数値にしてください。')
         print('[ERROR]: ', str(err))
     finally:
         exit()
