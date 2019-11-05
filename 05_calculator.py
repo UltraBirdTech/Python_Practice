@@ -62,7 +62,8 @@ def calculate(first, second, operator):
 
 
     else:
-        print('[ERROR]: 計算を行うことができませんでした。')
+        # 事前に演算子チェックをしているため、ここには到達しない
+        raise NotIncludeError(operator)
 
     return ans
 
