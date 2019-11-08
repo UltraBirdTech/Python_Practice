@@ -23,7 +23,7 @@ def main():
         exit()
     except NotMatchIntArgvError as err:
         print('[ERROR]: 計算する値は数値を入力してください。')
-        print('[ERROR]: 第', str(err) , '引数の値が数値に変換できない値でした')
+        print('[ERROR]: 第', str(err.num) , '引数の値が数値に変換できない値"' + err.value + '"でした。')
         exit()
     except NotIncludeError as err:
         print('[ERROR]: 演算子が期待したものではありません。+, -, *, / のうちの一つからお選びください。')
@@ -42,10 +42,10 @@ def check_validate(argv):
         raise NotMatchArgvError()
 
     if not str.isdigit(argv[1]):
-        raise NotMatchIntArgvError(1)
+        raise NotMatchIntArgvError(1, argv[1])
 
     if not str.isdigit(argv[2]):
-        raise NotMatchIntArgvError(2)
+        raise NotMatchIntArgvError(2, argv[2])
 
     operator = argv[3]
     if operator not in operators:
@@ -79,6 +79,8 @@ class NotMatchArgvError(Exception):
 
 
 class NotMatchIntArgvError(Exception):
-    pass
+    def __init__(self, num, value=''):
+        self.num = num
+        self.value = value
 
 main()
