@@ -41,11 +41,13 @@ def check_validate(argv):
     if len(argv) < 4:
         raise NotMatchArgvError()
 
-    if not str.isdigit(argv[1]):
-        raise NotMatchIntArgvError(1, argv[1])
+    first = argv[1]
+    if not str.isdigit(first):
+        raise NotMatchIntArgvError(1, first)
 
-    if not str.isdigit(argv[2]):
-        raise NotMatchIntArgvError(2, argv[2])
+    second = argv[2]
+    if not str.isdigit(second):
+        raise NotMatchIntArgvError(2, second)
 
     operator = argv[3]
     if operator not in operators:
