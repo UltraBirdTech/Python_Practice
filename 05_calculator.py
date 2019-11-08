@@ -23,15 +23,15 @@ def main():
         exit()
     except NotMatchIntArgvError as err:
         print('[ERROR]: 計算する値は数値を入力してください。')
-        print('[ERROR]: 第', str(err.num) , '引数の値が数値に変換できない値"' + err.value + '"でした。')
+        print('[ERROR]: 第' + str(err.num) + '引数の値が数値に変換できない値"' + err.value + '"でした。')
         exit()
     except NotIncludeError as err:
         print('[ERROR]: 演算子が期待したものではありません。+, -, *, / のうちの一つからお選びください。')
-        print('[ERROR]: "', str(err), '" is not include a list.')
+        print('[ERROR]: "' + str(err) + '" is not include a list.')
         exit()
     except ZeroDivisionError as err:
         print('[ERROR]: 割り算を行う際に0徐算が発生しました。第2引数を1以上の数値にしてください。')
-        print('[ERROR]: ', str(err))
+        print('[ERROR]: ' + str(err))
         exit()
 
     print(result)
