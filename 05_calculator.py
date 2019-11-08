@@ -21,9 +21,9 @@ def main():
         print('[USAGE]:   python calculator.py [1つ目の数値][2つ目の数値][演算子(+-*/)]')
         print('[EXAMPLE]: python calculator.py 2 2 + ')
         exit()
-    except ValueError as err:
+    except NotMatchIntArgvError as err:
         print('[ERROR]: 計算する値は数値を入力してください。')
-        print('[ERROR]: ', str(err))
+        print('[ERROR]: 第', str(err) , '引数の値が数値に変換できない値でした')
         exit()
     except NotIncludeError as err:
         print('[ERROR]: 演算子が期待したものではありません。+, -, *, / のうちの一つからお選びください。')
@@ -40,6 +40,12 @@ def main():
 def check_validate(argv):
     if len(argv) < 4:
         raise NotMatchArgvError()
+
+    if not str.isdigit(argv[1]):
+        raise NotMatchIntArgvError(1)
+
+    if not str.isdigit(argv[2]):
+        raise NotMatchIntArgvError(2)
 
     operator = argv[3]
     if operator not in operators:
@@ -69,6 +75,10 @@ class NotIncludeError(Exception):
 
 
 class NotMatchArgvError(Exception):
+    pass
+
+
+class NotMatchIntArgvError(Exception):
     pass
 
 main()
