@@ -28,9 +28,8 @@ def main():
         print('[ERROR]: api keyが記述されているファイルが存在しません。')
         print('[ERROR]: ファイルパスに"api_key.txt"を配置してください。')
     except RequestError as err:
-        reference_url =  'https://developers.virustotal.com/reference#api-responses'
-        print('[ERROR]: ' + str(err.status_code))
-        print('[USAGE]: ' + 'Please look API reference "' + reference_url + '"')
+        print('[ERROR]: ' + err.status_code)
+        print('[USAGE]: ' + 'Please look API reference "' + err.reference_url + '"')
     except Exception as err:
         print('[ERROR]: エラーが発生しました。' + str(err))
 
@@ -74,7 +73,8 @@ def display(data):
 
 class RequestError(Exception):
     def __init__(self, status_code):
-        self.status_code = status_code
+        self.status_code = str(status_code)
+        self.reference_url =  'https://developers.virustotal.com/reference#api-responses'
 
 
 if __name__ == '__main__':
