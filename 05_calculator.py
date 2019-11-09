@@ -6,8 +6,6 @@
 # 4. エラーチェック(try, except)
 import sys
 
-operators = ('+', '-', '*', '/')
-
 
 def main():
     argv = sys.argv
@@ -50,6 +48,7 @@ def check_validate(argv):
         raise NotMatchIntError(2, second)
 
     operator = argv[3]
+    operators = ('+', '-', '*', '/')
     if operator not in operators:
         raise NotIncludeError(operator)
 
