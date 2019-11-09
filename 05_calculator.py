@@ -23,7 +23,9 @@ def main():
         exit()
     except NotMatchIntArgvError as err:
         print('[ERROR]: 計算する値は数値を入力してください。')
-        print('[ERROR]: 第' + str(err.num) + '引数の値が数値に変換できない値"' + err.value + '"でした。')
+        num = str(err.num)
+        value = err.value
+        print('[ERROR]: 第' + num + '引数が数値に変換できない値"' + value + '"でした。')
         exit()
     except NotIncludeError as err:
         print('[ERROR]: 演算子が期待したものではありません。+, -, *, / のうちの一つからお選びください。')
