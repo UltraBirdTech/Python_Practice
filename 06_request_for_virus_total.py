@@ -12,7 +12,6 @@ VIRUS_TOTAL_REPORT_API_URL = 'https://www.virustotal.com/vtapi/v2/file/report'
 
 
 def main():
-
     argv = sys.argv
 
     if len(argv) < 2:
