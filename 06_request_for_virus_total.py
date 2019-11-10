@@ -41,8 +41,8 @@ def apikey():
 
 def request(sha256):
     params = {'resource': sha256, 'apikey': apikey()}
-    VIRUS_TOTAL_REPORT_API_URL = 'https://www.virustotal.com/vtapi/v2/file/report'
-    response = requests.get(VIRUS_TOTAL_REPORT_API_URL, params=params)
+    REPORT_API_URL = 'https://www.virustotal.com/vtapi/v2/file/report'
+    response = requests.get(REPORT_API_URL, params=params)
     return response
 
 
