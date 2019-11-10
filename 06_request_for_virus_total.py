@@ -13,7 +13,6 @@ VIRUS_TOTAL_REPORT_API_URL = 'https://www.virustotal.com/vtapi/v2/file/report'
 
 def main():
     argv = sys.argv
-
     if len(argv) < 2:
         print('[ERROR]: 引数が足りません。引数としてファイルのハッシュ値を与えてください。')
         exit()
