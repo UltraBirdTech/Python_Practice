@@ -74,7 +74,7 @@ def display(data):
 class RequestError(Exception):
     def __init__(self, status_code):
         self.status_code = str(status_code)
-        self.reference_url =  'https://developers.virustotal.com/reference#api-responses'
+        self.reference_url = 'https://developers.virustotal.com/reference#api-responses'
 
 
 if __name__ == '__main__':
