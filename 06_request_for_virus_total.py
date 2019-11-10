@@ -71,6 +71,7 @@ def display(data):
             for key, value in v.items():
                 print(str(key) + ':' + str(value))
 
+
 class RequestError(Exception):
     def __init__(self, status_code):
         self.status_code = str(status_code)
