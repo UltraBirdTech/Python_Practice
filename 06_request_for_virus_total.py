@@ -8,8 +8,6 @@ import requests
 import sys
 from sys import argv
 
-VIRUS_TOTAL_REPORT_API_URL = 'https://www.virustotal.com/vtapi/v2/file/report'
-
 
 def main():
     argv = sys.argv
@@ -43,6 +41,7 @@ def apikey():
 
 def request(sha256):
     params = {'resource': sha256, 'apikey': apikey()}
+    VIRUS_TOTAL_REPORT_API_URL = 'https://www.virustotal.com/vtapi/v2/file/report'
     response = requests.get(VIRUS_TOTAL_REPORT_API_URL, params=params)
     return response
 
