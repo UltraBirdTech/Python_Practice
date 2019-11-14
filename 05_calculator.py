@@ -19,7 +19,7 @@ def main():
         print('[USAGE]:   python calculator.py [1つ目の数値][2つ目の数値][演算子(+-*/)]')
         print('[EXAMPLE]: python calculator.py 2 2 + ')
         exit()
-    except NotMatchIntError as err:
+    except NotMatchNumError as err:
         print('[ERROR]: 計算する値は数値を入力してください。')
         print('[ERROR]: 第' + err.num + '引数が数値に変換できない値"' + err.value + '"でした。')
         exit()
@@ -41,11 +41,11 @@ def check_validate(argv):
 
     first = argv[1]
     if check_digit(first):
-        raise NotMatchIntError(1, first)
+        raise NotMatchNumError(1, first)
 
     second = argv[2]
     if check_digit(second):
-        raise NotMatchIntError(2, second)
+        raise NotMatchNumError(2, second)
 
     operator = argv[3]
     operators = ('+', '-', '*', '/')
@@ -86,7 +86,7 @@ class NotMatchArgvError(Exception):
     pass
 
 
-class NotMatchIntError(Exception):
+class NotMatchNumError(Exception):
     def __init__(self, num, value=''):
         self.num = str(num)
         self.value = value
