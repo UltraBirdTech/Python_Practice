@@ -5,6 +5,7 @@ from calculator import NotMatchArgvError
 from calculator import NotMatchNumError
 from calculator import NotIncludeError
 
+
 class TestCalculator(unittest.TestCase):
     def setUp(self):
         self.argv = ['file_name', '5', '4', '+']
