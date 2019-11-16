@@ -9,7 +9,6 @@ class TestCalculator(unittest.TestCase):
         self.argv = ['file_name', '5', '4', '+']
 
     def test_check_validate(self):
-        // エラーが起きないことを確認する
         calculator.check_validate(self.argv)
 
     def test_invalid_not_match_value(self):
@@ -32,4 +31,47 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(NotIncludeError):
             calculator.check_validate(self.argv)
 
+
+class TestCheckDigit(unittest.TestCase):
+    def test_check_true(self):
+        self.assertEqual(calculator.check_digit(str(1)), True)
+
+    def test_check_true_minus(self):
+        self.assertEqual(calculator.check_digit(str(-1)), True)
+
+    def test_check_false(self):
+        self.assertEqual(calculator.check_digit('a'), False)
+
+
+class TestCaluculate(unittest.TestCase):
+    def setUp(self):
+        self.first = 8
+        self.second = 4
+        self.operator = '+'
+
+    def test_caluculate_plus(self):
+        self.assertEqual(calculator.calculate(self.first, self.second, self.operator), 12) 
+
+    def test_caluculate_minus(self):
+        self.operator = '-'
+        self.assertEqual(calculator.calculate(self.first, self.second, self.operator), 4) 
+
+    def test_caluculate_multiplication(self):
+        self.operator = '*'
+        self.assertEqual(calculator.calculate(self.first, self.second, self.operator), 32)
+
+    def test_caluculate_division(self):
+        self.operator = '/'
+        self.assertEqual(calculator.calculate(self.first, self.second, self.operator), 2)
+
+    def test_caluculate_zero_division_error(self):
+        self.second = 0
+        self.operator = '/'
+        with self.assertRaises(ZeroDivisionError):
+            calculator.calculate(self.first, self.second, self.operator)
+
+    def test_caluculate_not_include_error(self):
+        self.operator = 'a'
+        with self.assertRaises(NotIncludeError):
+            calculator.calculate(self.first, self.second, self.operator)
 
