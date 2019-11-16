@@ -33,15 +33,15 @@ class TestCalculator(unittest.TestCase):
             calculator.check_validate(self.argv)
 
 
-class TestCheckDigit(unittest.TestCase):
-    def test_check_true(self):
-        self.assertEqual(calculator.check_digit(str(1)), True)
+class TestIsDigit(unittest.TestCase):
+    def test_is_digit_true(self):
+        self.assertEqual(calculator.is_digit(str(1)), True)
 
-    def test_check_true_minus(self):
-        self.assertEqual(calculator.check_digit(str(-1)), True)
+    def test_is_digit_true_minus(self):
+        self.assertEqual(calculator.is_digit(str(-1)), True)
 
-    def test_check_false(self):
-        self.assertEqual(calculator.check_digit('a'), False)
+    def test_is_digit_false(self):
+        self.assertEqual(calculator.is_digit('a'), False)
 
 
 class TestCaluculate(unittest.TestCase):
