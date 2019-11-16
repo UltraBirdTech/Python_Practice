@@ -40,11 +40,11 @@ def check_validate(argv):
         raise NotMatchArgvError()
 
     first = argv[1]
-    if check_digit(first):
+    if not check_digit(first):
         raise NotMatchNumError(1, first)
 
     second = argv[2]
-    if check_digit(second):
+    if not check_digit(second):
         raise NotMatchNumError(2, second)
 
     operator = argv[3]
@@ -57,7 +57,7 @@ def check_digit(str_num):
     if str_num[0] == '-':
         str_num = str_num[1:]
 
-    return not str.isdigit(str_num)
+    return str.isdigit(str_num)
 
 
 def calculate(first, second, operator):
