@@ -1,4 +1,4 @@
-# [USAGE]: python -m unittest tests/05_calculator_test.py
+# [USAGE]: python -m unittest tests/calculator_test.py
 import unittest
 import calculator
 from calculator import NotMatchArgvError
