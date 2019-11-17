@@ -17,7 +17,7 @@ class TestCalculator(unittest.TestCase):
         self.argv = []
         with self.assertRaises(NotMatchArgvError):
             calculator.check_validate(self.argv)
-    
+
     def test_invalid_first_value(self):
         self.argv[1] = 'a'
         with self.assertRaises(NotMatchNumError):
