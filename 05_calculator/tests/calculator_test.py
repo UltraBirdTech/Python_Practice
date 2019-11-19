@@ -56,7 +56,7 @@ class TestCaluculate(unittest.TestCase):
 
     def test_caluculate_minus(self):
         self.operator = '-'
-        self.assertEqual(calculator.calculate(self.first, self.second, self.operator), 4) 
+        self.assertEqual(calculator.calculate(self.first, self.second, self.operator), 4)
 
     def test_caluculate_multiplication(self):
         self.operator = '*'
