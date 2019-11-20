@@ -52,7 +52,8 @@ class TestCaluculate(unittest.TestCase):
         self.operator = '+'
 
     def test_caluculate_plus(self):
-        self.assertEqual(calculator.calculate(self.first, self.second, self.operator), 12)
+        self.assertEqual(
+            calculator.calculate(self.first, self.second, self.operator), 12)
 
     def test_caluculate_minus(self):
         self.operator = '-'
