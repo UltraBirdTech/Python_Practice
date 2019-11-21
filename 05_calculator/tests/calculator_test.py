@@ -77,4 +77,3 @@ class TestCaluculate(unittest.TestCase):
         self.operator = 'a'
         with self.assertRaises(NotIncludeError):
             calculator.calculate(self.first, self.second, self.operator)
-
