@@ -62,7 +62,8 @@ class TestCaluculate(unittest.TestCase):
 
     def test_caluculate_multiplication(self):
         self.operator = '*'
-        self.assertEqual(calculator.calculate(self.first, self.second, self.operator), 32)
+        self.assertEqual(
+            calculator.calculate(self.first, self.second, self.operator), 32)
 
     def test_caluculate_division(self):
         self.operator = '/'
