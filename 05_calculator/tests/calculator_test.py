@@ -67,7 +67,8 @@ class TestCaluculate(unittest.TestCase):
 
     def test_caluculate_division(self):
         self.operator = '/'
-        self.assertEqual(calculator.calculate(self.first, self.second, self.operator), 2)
+        self.assertEqual(
+            calculator.calculate(self.first, self.second, self.operator), 2)
 
     def test_caluculate_zero_division_error(self):
         self.second = 0
