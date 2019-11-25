@@ -12,7 +12,7 @@ while len(members):
     else:
         for p in presenter:
             string += p + 'さん'
-        
+
     print('次に発表する人は' + str(string) + 'です。' + ('\n' * LineNum))
         
     members.remove(presenter)
