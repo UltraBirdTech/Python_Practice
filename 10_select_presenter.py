@@ -14,7 +14,7 @@ while len(members):
             string += p + 'さん'
 
     print('次に発表する人は' + str(string) + 'です。' + ('\n' * LineNum))
-        
+
     members.remove(presenter)
     print('残りの発表者数は' + str(len(members)) + '組です。')
     input()
