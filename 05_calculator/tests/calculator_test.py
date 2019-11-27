@@ -56,6 +56,10 @@ class TestIsDigit(unittest.TestCase):
     def test_is_digit_false(self):
         self.assertEqual(calculator.is_digit('a'), False)
 
+    def test_is_digit_false_not_num(self):
+        self.assertEqual(calculator.is_digit('00.05'), False)
+
+
 
 class TestCaluculate(unittest.TestCase):
     def setUp(self):
