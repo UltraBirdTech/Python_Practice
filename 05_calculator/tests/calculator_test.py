@@ -41,6 +41,18 @@ class TestIsDigit(unittest.TestCase):
     def test_is_digit_true_minus(self):
         self.assertEqual(calculator.is_digit(str(-1)), True)
 
+    def test_is_digit_true_few(self):
+        self.assertEqual(calculator.is_digit(str(0.1)), True)
+
+    def test_is_digit_true_kana(self):
+        self.assertEqual(calculator.is_digit('１'), True)
+
+    def test_is_digit_true_minus_kana(self):
+        self.assertEqual(calculator.is_digit('ー１'), True)
+
+    def test_is_digit_true_few_kana(self):
+        self.assertEqual(calculator.is_digit('０.１'), True)
+
     def test_is_digit_false(self):
         self.assertEqual(calculator.is_digit('a'), False)
 
