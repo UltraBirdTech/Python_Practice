@@ -60,7 +60,6 @@ class TestIsDigit(unittest.TestCase):
         self.assertEqual(calculator.is_digit('00.05'), False)
 
 
-
 class TestCaluculate(unittest.TestCase):
     def setUp(self):
         self.first = 8
