@@ -5,7 +5,6 @@
 # 3. 数値リテラルの四則演算
 # 4. エラーチェック(try, except)
 import sys
-import re
 
 
 def main():
