@@ -55,11 +55,11 @@ def check_validate(argv):
 
 
 def is_digit(str_num):
-    pattern = r'^[-ー]?[0-9０-９]+(\.[0-9０-９]+)?$'
-    obj = re.match(pattern, str_num)
-
-    return obj is not None
-
+    try:
+        float(str_num)
+    except ValueError as err:
+        return False
+    return True
 
 def calculate(first, second, operator):
     if operator == '+':
