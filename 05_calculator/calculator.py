@@ -5,6 +5,7 @@
 # 3. 数値リテラルの四則演算
 # 4. エラーチェック(try, except)
 import sys
+import re
 
 
 def main():
@@ -54,11 +55,10 @@ def check_validate(argv):
 
 
 def is_digit(str_num):
-    try:
-        float(str_num)
-    except ValueError as err:
-        return False
-    return True
+    pattern = r'^[-ー]?[0-9０-９]+(\.[0-9０-９]+)?$'
+    obj = re.match(pattern, str_num)
+
+    return obj is not None
 
 def calculate(first, second, operator):
     if operator == '+':
