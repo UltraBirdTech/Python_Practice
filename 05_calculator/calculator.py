@@ -60,6 +60,7 @@ def is_digit(str_num):
 
     return obj is not None
 
+
 def calculate(first, second, operator):
     if operator == '+':
         return first + second
