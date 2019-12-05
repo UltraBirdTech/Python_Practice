@@ -59,6 +59,7 @@ class TestIsDigit(unittest.TestCase):
     def test_is_digit_true_minus_few(self):
         self.assertEqual(calculator.is_digit('-0.05'), True)
 
+
 class TestCaluculate(unittest.TestCase):
     def setUp(self):
         self.first = 8
