@@ -17,6 +17,7 @@ class Pokemon():
         else:
             print('対応していません')
 
+
 class Pikachu(Pokemon):
     def __init__(self, moves):
         name = 'Pikachu'
