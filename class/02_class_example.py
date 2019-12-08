@@ -25,6 +25,7 @@ class Pikachu(Pokemon):
         moves = moves
         super().__init__(name, attribute, moves)
 
+
 class Garura(Pokemon):
     def __init__(self, moves):
         name = 'Garura'
