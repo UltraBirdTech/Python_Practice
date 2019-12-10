@@ -5,6 +5,7 @@ class Animal():
     def cry(self):
         print(self.voice)
 
+
 class Dog(Animal):
     def __init__(self):
         name = 'dog'
