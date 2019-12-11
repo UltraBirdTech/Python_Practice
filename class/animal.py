@@ -12,6 +12,7 @@ class Dog(Animal):
         self.voice = 'Wow Wow'
         super().__init__(name)
 
+
 class Cat(Animal):
     def __init__(self):
         name = 'Cat'
