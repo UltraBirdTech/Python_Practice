@@ -21,4 +21,3 @@ class Cat(Animal):
 
 Dog().cry()
 Cat().cry()
-
