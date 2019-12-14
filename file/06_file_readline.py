@@ -4,7 +4,7 @@ with open('10.txt', 'rt') as f:
 
     # readline()
     for i in range(1, 10):
-       print(f.readline(), end='')
+        print(f.readline(), end='')
 
     # 繰り返し
     for data in f:
