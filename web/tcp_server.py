@@ -29,7 +29,6 @@ while True:
 
     client, addr = server.accept()
 
-
     print("[*] Accepted connection from: %s:%d" % (addr[0], addr[1]))
 
     # A thread of recieve data
