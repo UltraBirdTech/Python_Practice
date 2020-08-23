@@ -15,6 +15,14 @@ class AbstractPizzaFactory():
     def __init__(self, pizza_factory, amount_str="normal"):
         self.factory = pizza_factory
 
+    def make_pizza(self, amount_str):
+        amount = amount_dict[amount_str]
+        self.pizza_materials = []
+        self.pizza_materials.append(self.factory.add_dough(amount))
+        self.pizza_materials.append(self.factory.add_source(amount))
+        self.pizza_materials.append(self.factory.add_topping(amount))
+
+
 
 if __name__ == "__main__":
     main()
