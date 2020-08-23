@@ -22,6 +22,10 @@ class AbstractPizzaFactory():
         self.pizza_materials.append(self.factory.add_source(amount))
         self.pizza_materials.append(self.factory.add_topping(amount))
 
+    def check_pizza(self):
+        for pizza_matterial in serlf.pizza_materials:
+            pizza_matterial.check()
+
 
 
 if __name__ == "__main__":
