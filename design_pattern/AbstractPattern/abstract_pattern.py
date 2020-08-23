@@ -10,6 +10,12 @@ def main():
     pizza2 = factorya.make_pizza("normal")
     pizza2.check_pizza()
 
+# AbstractFacotry
+class AbstractPizzaFactory():
+    def __init__(self, pizza_factory, amount_str="normal"):
+        self.factory = pizza_factory
+
+
 if __name__ == "__main__":
     main()
     
