@@ -26,7 +26,9 @@ class AbstractPizzaFactory():
         for pizza_matterial in serlf.pizza_materials:
             pizza_matterial.check()
 
-
+    # create product
+    def add_dough(self, amount=1):
+        pass
 
 if __name__ == "__main__":
     main()
