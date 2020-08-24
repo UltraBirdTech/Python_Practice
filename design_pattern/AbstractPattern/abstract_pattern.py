@@ -30,6 +30,10 @@ class AbstractPizzaFactory():
     def add_dough(self, amount=1):
         pass
 
+    def add_source(self, amount=1):
+        pass
+
+
 if __name__ == "__main__":
     main()
     
