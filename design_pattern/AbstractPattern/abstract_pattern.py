@@ -33,6 +33,10 @@ class AbstractPizzaFactory():
     def add_source(self, amount=1):
         pass
 
+    def add_topping(self, amount=1):
+        pass
+
+
 
 if __name__ == "__main__":
     main()
