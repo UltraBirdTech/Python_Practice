@@ -40,6 +40,9 @@ class PizzaFactoryA(AbstractPizzaFactory):
     def __init__(self):
         pass
 
+    def add_dough(self, amount=1)
+        return WheatDough(amount)
+
 if __name__ == "__main__":
     main()
     
