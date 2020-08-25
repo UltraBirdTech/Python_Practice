@@ -43,6 +43,12 @@ class PizzaFactoryA(AbstractPizzaFactory):
     def add_dough(self, amount=1)
         return WheatDough(amount)
 
+    def add_source(self, amount=1)
+        return TomatoSource(amount)
+
+    def add_topping(self, amount=1)
+        return CoanTopping(amount)
+
 if __name__ == "__main__":
     main()
     
