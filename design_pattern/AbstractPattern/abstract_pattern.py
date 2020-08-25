@@ -36,7 +36,9 @@ class AbstractPizzaFactory():
     def add_topping(self, amount=1):
         pass
 
-
+class PizzaFactoryA(AbstractPizzaFactory):
+    def __init__(self):
+        pass
 
 if __name__ == "__main__":
     main()
