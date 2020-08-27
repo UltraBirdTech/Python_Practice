@@ -62,6 +62,12 @@ class PizzaFactoryB(AbstractPizzaFactory):
     def add_topping(self, amount=1)
         return CheeseTopping(amount)
 
+class Dough:
+    def __init__(self, amount):
+        self.amount = amount
+
+    def check(self):
+        pass
 
 if __name__ == "__main__":
     main()
