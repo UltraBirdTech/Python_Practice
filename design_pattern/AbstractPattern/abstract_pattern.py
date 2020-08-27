@@ -49,6 +49,20 @@ class PizzaFactoryA(AbstractPizzaFactory):
     def add_topping(self, amount=1)
         return CoanTopping(amount)
 
+class PizzaFactoryB(AbstractPizzaFactory):
+    def __init__(self):
+        pass
+
+    def add_dough(self, amount=1)
+        return RiceFlourDough(amount)
+
+    def add_source(self, amount=1)
+        return BasilSource(amount)
+
+    def add_topping(self, amount=1)
+        return CheeseTopping(amount)
+
+
 if __name__ == "__main__":
     main()
     
