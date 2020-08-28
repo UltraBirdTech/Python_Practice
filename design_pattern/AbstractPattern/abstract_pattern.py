@@ -69,6 +69,11 @@ class Dough:
     def check(self):
         pass
 
+class WheatDough(Dough):
+    def check(self):
+        print("Wheat(amount: {}".format(self.amount))
+
+
 if __name__ == "__main__":
     main()
     
