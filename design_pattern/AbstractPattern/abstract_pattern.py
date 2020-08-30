@@ -77,6 +77,10 @@ class RiceFlourDough(Dough):
     def check(self):
         print("FlourDough(amount: {}".format(self.amount))
 
+class TomatoSource(Dough):
+    def check(self):
+        print("TomatoSource(amount: {}".format(self.amount))
+
 
 if __name__ == "__main__":
     main()
