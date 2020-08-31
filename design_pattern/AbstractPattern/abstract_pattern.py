@@ -85,6 +85,12 @@ class BasilSource(Dough):
     def check(self):
         print("BasilSource(amount: {}".format(self.amount))
 
+class Topping:
+    def __init__(self, amount):
+        self.amount = amount
+
+    def check(self):
+        pass
 if __name__ == "__main__":
     main()
     
