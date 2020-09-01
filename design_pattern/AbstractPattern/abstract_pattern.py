@@ -91,6 +91,10 @@ class Topping:
 
     def check(self):
         pass
+
+class CoanTopping(Topping):
+    def check(self):
+        print("CoanTopping(amount: {}".format(self.amount))
 if __name__ == "__main__":
     main()
     
