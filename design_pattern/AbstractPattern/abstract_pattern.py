@@ -2,13 +2,13 @@ amount_dict = {"high": 1.2, "normal":1.0, "low": 0.8}
 
 def main():
     factorya = AbstractPizzaFactory(PizzaFactoryA())
-    pizza1 = factorya.make_pizza("high")
-    pizza1.check_pizza()
+    factorya.make_pizza("high")
+    factorya.check_pizza()
 
     print("-" * 5)
     factoryb = AbstractPizzaFactory(PizzaFactoryA())
-    pizza2 = factorya.make_pizza("normal")
-    pizza2.check_pizza()
+    factoryb.make_pizza("normal")
+    factoryb.check_pizza()
 
 # AbstractFacotry
 class AbstractPizzaFactory():
@@ -23,7 +23,7 @@ class AbstractPizzaFactory():
         self.pizza_materials.append(self.factory.add_topping(amount))
 
     def check_pizza(self):
-        for pizza_matterial in serlf.pizza_materials:
+        for pizza_matterial in self.pizza_materials:
             pizza_matterial.check()
 
     # create product
