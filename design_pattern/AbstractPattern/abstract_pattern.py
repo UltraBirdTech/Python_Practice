@@ -95,6 +95,11 @@ class Topping:
 class CoanTopping(Topping):
     def check(self):
         print("CoanTopping(amount: {}".format(self.amount))
+
+class CheeseTopping(Topping):
+    def check(self):
+        print("CheeseTopping(amount: {}".format(self.amount))
+
 if __name__ == "__main__":
     main()
     
