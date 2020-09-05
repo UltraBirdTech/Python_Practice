@@ -11,4 +11,9 @@ def main():
 
 def make_pizza(PizzaFactory, amount_str):
     pizza = PizzaFactory()
-    
+    mount = amountdict[amount_str]
+    pizza.pizza_matterials = []
+    pizza.pizza_matterials.append(piiza.add_dough(amount))
+    pizza.pizza_matterials.append(piiza.add_source(amount))
+    pizza.pizza_matterials.append(piiza.add_topping(amount))
+    return pizza
