@@ -9,5 +9,6 @@ def main():
     pizza2 = make_pizza(PizzaFactoryB, "normal")
     pizza2.check_pizza()
 
-
+def make_pizza(PizzaFactory, amount_str):
+    pizza = PizzaFactory()
     
