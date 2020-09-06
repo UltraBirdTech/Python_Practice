@@ -17,3 +17,7 @@ def make_pizza(PizzaFactory, amount_str):
     pizza.pizza_matterials.append(piiza.add_source(amount))
     pizza.pizza_matterials.append(piiza.add_topping(amount))
     return pizza
+
+class PizzaFactoryA:
+    def __init__(self):
+        pass
