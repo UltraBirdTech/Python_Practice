@@ -21,3 +21,7 @@ def make_pizza(PizzaFactory, amount_str):
 class PizzaFactoryA:
     def __init__(self):
         pass
+
+    def check_pizza(self):
+        for pizza_matterial in self.pizza_materials:
+            piiza_matterial.check()
