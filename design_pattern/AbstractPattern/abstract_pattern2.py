@@ -30,3 +30,7 @@ class PizzaFactoryA:
     def add_dough(self):
         return Class.Daugh()
 
+    @classmethod
+    def add_topping(self):
+        return Class.Topping()
+
