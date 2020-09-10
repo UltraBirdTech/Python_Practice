@@ -34,3 +34,7 @@ class PizzaFactoryA:
     def add_topping(self):
         return Class.Topping()
 
+    @classmethod
+    def add_source(self):
+        return Class.Source()
+
