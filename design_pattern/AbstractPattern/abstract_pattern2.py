@@ -28,13 +28,13 @@ class PizzaFactoryA:
 
     @classmethod
     def add_dough(self):
-        return Class.Daugh()
+        return Class.WheatDaugh()
 
     @classmethod
     def add_topping(self):
-        return Class.Topping()
+        return Class.CoanTopping()
 
     @classmethod
     def add_source(self):
-        return Class.Source()
+        return Class.TomatSource()
 
