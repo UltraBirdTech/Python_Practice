@@ -38,3 +38,6 @@ class PizzaFactoryA:
     def add_source(self):
         return Class.TomatSource()
 
+    class WheatDough:
+        def __init__(self, maount=1):
+            self.amount = amount
