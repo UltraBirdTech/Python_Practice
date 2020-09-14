@@ -45,3 +45,9 @@ class PizzaFactoryA:
     class CoanTopping:
         def __init__(self, maount=1):
             self.amount = amount
+
+    class TomatoSource:
+        def __init__(self, maount=1):
+            self.amount = amount
+
+
