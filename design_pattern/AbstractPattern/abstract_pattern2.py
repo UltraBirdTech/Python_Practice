@@ -49,6 +49,9 @@ class PizzaFactoryA:
         def __init__(self, maount=1):
             self.amount = amount
 
+        def check(self):
+            print("Coan(amount: {})".format(self.amount))
+
     class TomatoSource:
         def __init__(self, maount=1):
             self.amount = amount
