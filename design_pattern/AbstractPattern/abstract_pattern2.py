@@ -59,4 +59,45 @@ class PizzaFactoryA:
         def check(self):
             print("TomatSourcce(amount: {})".format(self.amount))
 
+class PizzaFactoryB:
+    def __init__(self):
+        pass
+
+    def check_pizza(self):
+        for pizza_matterial in self.pizza_materials:
+            piiza_matterial.check()
+
+    @classmethod
+    def add_dough(self):
+        return Class.WheatDaugh()
+
+    @classmethod
+    def add_topping(self):
+        return Class.CoanTopping()
+
+    @classmethod
+    def add_source(self):
+        return Class.TomatSource()
+
+    class WheatDough:
+        def __init__(self, maount=1):
+            self.amount = amount
+
+        def check(self):
+            print("Wheat(amount: {})".format(self.amount))
+
+    class CoanTopping:
+        def __init__(self, maount=1):
+            self.amount = amount
+
+        def check(self):
+            print("Coan(amount: {})".format(self.amount))
+
+    class TomatoSource:
+        def __init__(self, maount=1):
+            self.amount = amount
+
+        def check(self):
+            print("TomatSourcce(amount: {})".format(self.amount))
+
 
