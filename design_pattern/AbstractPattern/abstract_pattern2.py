@@ -79,12 +79,12 @@ class PizzaFactoryB:
     def add_source(self):
         return Class.TomatSource()
 
-    class WheatDough:
+    class RiceFlourDough:
         def __init__(self, maount=1):
             self.amount = amount
 
         def check(self):
-            print("Wheat(amount: {})".format(self.amount))
+            print("RiceFlour(amount: {})".format(self.amount))
 
     class CoanTopping:
         def __init__(self, maount=1):
