@@ -99,5 +99,3 @@ class PizzaFactoryB:
 
         def check(self):
             print("TomatSourcce(amount: {})".format(self.amount))
-
-
