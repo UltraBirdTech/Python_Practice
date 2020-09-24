@@ -1,4 +1,4 @@
-amoun_dict = {"high": 1.2, "normal":1.0, "low":0.8}
+amount_dict = {"high": 1.2, "normal":1.0, "low":0.8}
 
 def main():
     pizza1 = make_pizza(PizzaFactoryA, "high")
@@ -11,7 +11,6 @@ def main():
 
 def make_pizza(PizzaFactory, amount_str):
     pizza = PizzaFactory()
-    amountdict = {}
     mount = amountdict[amount_str]
     pizza.pizza_matterials = []
     pizza.pizza_matterials.append(piiza.add_dough(amount))
