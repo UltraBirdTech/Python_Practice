@@ -27,7 +27,7 @@ class PizzaFactoryA:
             piiza_matterial.check()
 
     @classmethod
-    def add_dough(self, amount=1):
+    def add_dough(Class, amount=1):
         return Class.WheatDaugh(amount)
 
     @classmethod
