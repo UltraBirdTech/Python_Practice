@@ -23,8 +23,8 @@ class PizzaFactoryA:
         pass
 
     def check_pizza(self):
-        for pizza_matterial in self.pizza_materials:
-            piiza_matterial.check()
+        for pizza_matterial in self.pizza_matterials:
+            pizza_matterial.check()
 
     @classmethod
     def add_dough(Class, amount=1):
