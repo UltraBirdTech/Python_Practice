@@ -68,8 +68,8 @@ class PizzaFactoryB:
             piiza_matterial.check()
 
     @classmethod
-    def add_dough(self):
-        return Class.WheatDaugh()
+    def add_dough(Class, amount=1):
+        return Class.WheatDaugh(amount)
 
     @classmethod
     def add_topping(self):
