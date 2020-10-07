@@ -69,7 +69,7 @@ class PizzaFactoryB:
 
     @classmethod
     def add_dough(Class, amount=1):
-        return Class.RiceFlourDaugh(amount)
+        return Class.RiceFlourDough(amount)
 
     @classmethod
     def add_topping(self):
