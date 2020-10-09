@@ -80,7 +80,7 @@ class PizzaFactoryB:
         return Class.TomatSource()
 
     class RiceFlourDough:
-        def __init__(self, maount=1):
+        def __init__(self, amount=1):
             self.amount = amount
 
         def check(self):
