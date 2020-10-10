@@ -76,8 +76,8 @@ class PizzaFactoryB:
         return Class.CoanTopping(amount)
 
     @classmethod
-    def add_source(self):
-        return Class.TomatSource()
+    def add_source(Class, amount=1):
+        return Class.TomatSource(amount)
 
     class RiceFlourDough:
         def __init__(self, amount=1):
