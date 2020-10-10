@@ -72,8 +72,8 @@ class PizzaFactoryB:
         return Class.RiceFlourDough(amount)
 
     @classmethod
-    def add_topping(self):
-        return Class.CoanTopping()
+    def add_topping(Class, amount=1):
+        return Class.CoanTopping(amount)
 
     @classmethod
     def add_source(self):
