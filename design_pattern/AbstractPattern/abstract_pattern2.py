@@ -64,7 +64,7 @@ class PizzaFactoryB:
         pass
 
     def check_pizza(self):
-        for pizza_matterial in self.pizza_materials:
+        for pizza_matterial in self.pizza_matterials:
             pizza_matterial.check()
 
     @classmethod
