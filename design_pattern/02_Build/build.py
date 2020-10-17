@@ -1,4 +1,8 @@
 import abc
 
 def main():
-    pass
+    html = Director.construct(HTMLBuilder())
+    text = Director.construct(TextBuilder())
+    print(html)
+    print('=' * 20)
+    print(text)
