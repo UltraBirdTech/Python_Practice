@@ -16,3 +16,8 @@ class Director():
         all_str += builder.build_footer("------")
         return all_str
         
+class AbstractBuilder(metaclass=abc.ABCMeta):
+    @abc.abstractmethod
+    def build_title(self, title):
+        pass
+    
