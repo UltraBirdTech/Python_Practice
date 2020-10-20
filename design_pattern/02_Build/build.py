@@ -20,4 +20,8 @@ class AbstractBuilder(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def build_title(self, title):
         pass
+
+    @abc.abstractmethod
+    def build_header(self, header):
+        pass
     
