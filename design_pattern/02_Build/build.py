@@ -24,4 +24,8 @@ class AbstractBuilder(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def build_header(self, header):
         pass
+
+    @abc.abstractmethod
+    def build_contents(self, contents):
+        pass
     
