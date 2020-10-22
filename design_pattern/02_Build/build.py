@@ -28,4 +28,8 @@ class AbstractBuilder(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def build_contents(self, contents):
         pass
+ 
+    @abc.abstractmethod
+    def build_footer(self, footer):
+        pass
     
