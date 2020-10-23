@@ -33,3 +33,6 @@ class AbstractBuilder(metaclass=abc.ABCMeta):
     def build_footer(self, footer):
         pass
     
+class HTMLBuilder(AbstractBuilder):
+    def build_title(self, title):
+        return "<h1>{}</h1>\n".format(title)
