@@ -36,3 +36,6 @@ class AbstractBuilder(metaclass=abc.ABCMeta):
 class HTMLBuilder(AbstractBuilder):
     def build_title(self, title):
         return "<h1>{}</h1>\n".format(title)
+
+    def build_header(self, header):
+        return "<header><p>{}</p></header>\n".format(header)
