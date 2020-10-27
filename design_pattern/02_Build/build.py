@@ -41,4 +41,4 @@ class HTMLBuilder(AbstractBuilder):
         return "<header><p>{}</p></header>\n".format(header)
 
     def build_contents(self, header):
-        return "<header><p>{}</p></header>\n".format(header)
+        html_contents = []
