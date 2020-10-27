@@ -39,3 +39,6 @@ class HTMLBuilder(AbstractBuilder):
 
     def build_header(self, header):
         return "<header><p>{}</p></header>\n".format(header)
+
+    def build_contents(self, header):
+        return "<header><p>{}</p></header>\n".format(header)
