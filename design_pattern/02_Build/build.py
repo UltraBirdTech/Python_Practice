@@ -42,3 +42,5 @@ class HTMLBuilder(AbstractBuilder):
 
     def build_contents(self, header):
         html_contents = []
+        for content in contents:
+            pass
