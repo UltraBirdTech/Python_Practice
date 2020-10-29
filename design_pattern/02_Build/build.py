@@ -40,7 +40,8 @@ class HTMLBuilder(AbstractBuilder):
     def build_header(self, header):
         return "<header><p>{}</p></header>\n".format(header)
 
-    def build_contents(self, header):
+    def build_contents(self, contents):
         html_contents = []
         for content in contents:
-            pass
+            html_contents.append("<p>{}</p>".format(content))
+        return "".join(html_contents)
