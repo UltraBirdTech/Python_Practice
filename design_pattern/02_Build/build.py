@@ -45,3 +45,6 @@ class HTMLBuilder(AbstractBuilder):
         for content in contents:
             html_contents.append("<p>{}</p>".format(content))
         return "".join(html_contents)
+ 
+    def build_footer(self, footer):
+        return "<footer>{}</footer>\n".format(footer)
