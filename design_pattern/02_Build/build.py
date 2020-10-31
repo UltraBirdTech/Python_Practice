@@ -48,3 +48,6 @@ class HTMLBuilder(AbstractBuilder):
  
     def build_footer(self, footer):
         return "<footer>{}</footer>\n".format(footer)
+
+class TextBuilder(AbstractBuilder):
+    pass
