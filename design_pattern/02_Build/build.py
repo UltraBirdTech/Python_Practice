@@ -2,10 +2,10 @@ import abc
 
 def main():
     html = Director.construct(HTMLBuilder())
-    text = Director.construct(TextBuilder())
+#    text = Director.construct(TextBuilder())
     print(html)
     print('=' * 20)
-    print(text)
+#    print(text)
 
 class Director():
     def construct(self, builder):
@@ -51,3 +51,5 @@ class HTMLBuilder(AbstractBuilder):
 
 class TextBuilder(AbstractBuilder):
     pass
+
+main()
