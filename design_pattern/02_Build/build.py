@@ -50,6 +50,19 @@ class HTMLBuilder(AbstractBuilder):
         return "<footer>{}</footer>\n".format(footer)
 
 class TextBuilder(AbstractBuilder):
-    pass
+    def build_title(self, title):
+        return "**{}**\n".format(title)
+
+    def build_header(self, header):
+        return "<header><p>{}</p></header>\n".format(header)
+
+    def build_contents(self, contents):
+        html_contents = []
+        for content in contents:
+            html_contents.append("<p>{}</p>\n".format(content))
+        return "".join(html_contents)
+ 
+    def build_footer(self, footer):
+        return "<footer>{}</footer>\n".format(footer)
 
 main()
