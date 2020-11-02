@@ -54,7 +54,7 @@ class TextBuilder(AbstractBuilder):
         return "**{}**\n".format(title)
 
     def build_header(self, header):
-        return "<header><p>{}</p></header>\n".format(header)
+        return "{}\n".format(header)
 
     def build_contents(self, contents):
         html_contents = []
