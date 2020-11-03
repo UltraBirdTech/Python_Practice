@@ -57,9 +57,9 @@ class TextBuilder(AbstractBuilder):
         return "{}\n".format(header)
 
     def build_contents(self, contents):
-        html_contents = []
+        text_contents = []
         for content in contents:
-            html_contents.append("<p>{}</p>\n".format(content))
+            text_contents.append("{}\n".format(content))
         return "".join(html_contents)
  
     def build_footer(self, footer):
