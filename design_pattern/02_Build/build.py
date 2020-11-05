@@ -63,6 +63,6 @@ class TextBuilder(AbstractBuilder):
         return "".join(html_contents)
  
     def build_footer(self, footer):
-        return "<footer>{}</footer>\n".format(footer)
+        return "{}\n".format(footer)
 
 main()
