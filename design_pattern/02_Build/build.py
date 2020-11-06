@@ -2,10 +2,7 @@ import abc
 
 def main():
     html = Director().construct(HTMLBuilder())
-#    text = Director.construct(TextBuilder())
-    print(html)
-    print('=' * 20)
-#    print(text)
+    text = Director().construct(TextBuilder())
 
 class Director():
     def construct(self, builder):
@@ -60,7 +57,7 @@ class TextBuilder(AbstractBuilder):
         text_contents = []
         for content in contents:
             text_contents.append("{}\n".format(content))
-        return "".join(html_contents)
+        return "".join(text_contents)
  
     def build_footer(self, footer):
         return "{}\n".format(footer)
