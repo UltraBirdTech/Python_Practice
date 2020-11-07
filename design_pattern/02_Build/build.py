@@ -2,7 +2,10 @@ import abc
 
 def main():
     html = Director().construct(HTMLBuilder())
+    print(html)
     text = Director().construct(TextBuilder())
+    print("*" * 10)
+    print(text)
 
 class Director():
     def construct(self, builder):
