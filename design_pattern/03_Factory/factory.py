@@ -1,4 +1,5 @@
 import abc
 
 def main():
-    pass
+    cow = FactoryCow()
+    cow.check_animal()
