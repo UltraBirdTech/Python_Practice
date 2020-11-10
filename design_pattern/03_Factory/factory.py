@@ -6,3 +6,7 @@ def main():
 
     chicken = FactoryChicken()
     chicken.check_animal()
+
+class Factory:
+    def __init__(self):
+        pass
