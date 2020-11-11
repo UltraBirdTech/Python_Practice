@@ -9,4 +9,4 @@ def main():
 
 class Factory:
     def __init__(self):
-        pass
+        self.animal = self.factory_method()
