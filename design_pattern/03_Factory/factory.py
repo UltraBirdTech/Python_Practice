@@ -12,4 +12,5 @@ class Factory:
         self.animal = self.factory_method()
 
     def check_animal(self):
-        pass
+        self.animal.eat()
+        self.animal.cheack()
