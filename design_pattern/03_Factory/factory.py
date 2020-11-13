@@ -10,3 +10,6 @@ def main():
 class Factory:
     def __init__(self):
         self.animal = self.factory_method()
+
+    def check_animal(self):
+        pass
