@@ -14,3 +14,7 @@ class Factory:
     def check_animal(self):
         self.animal.eat()
         self.animal.cheack()
+
+    @abc.abstractmethod
+    def factory_method(self):
+        pass
