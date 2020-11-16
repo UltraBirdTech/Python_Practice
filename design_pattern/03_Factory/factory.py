@@ -20,4 +20,6 @@ class Factory:
         pass
 
 class Animal:
-    pass
+    @abc.abstractmethod
+    def eat(self):
+        pass
