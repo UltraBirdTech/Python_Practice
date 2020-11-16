@@ -18,3 +18,6 @@ class Factory:
     @abc.abstractmethod
     def factory_method(self):
         pass
+
+class Animal:
+    pass
