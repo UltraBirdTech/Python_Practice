@@ -23,3 +23,8 @@ class Animal:
     @abc.abstractmethod
     def eat(self):
         pass
+
+    @abc.abstractmethod
+    def speak(self):
+        pass
+
