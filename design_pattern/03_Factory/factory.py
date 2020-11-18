@@ -28,3 +28,5 @@ class Animal:
     def speak(self):
         pass
 
+class CowFactory(Animal):
+    pass
