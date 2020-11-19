@@ -29,4 +29,5 @@ class Animal:
         pass
 
 class CowFactory(Animal):
-    pass
+    def factory_method(self):
+        return Cow()
