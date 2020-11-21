@@ -31,3 +31,7 @@ class Animal:
 class CowFactory(Animal):
     def factory_method(self):
         return Cow()
+
+class ChickenFactory(Animal):
+    def factory_method(self):
+        return Chicken()
