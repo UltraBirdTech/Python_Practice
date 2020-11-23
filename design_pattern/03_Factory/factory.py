@@ -42,3 +42,10 @@ class Cow(Animal):
 
     def speak(self):
         print('Cow:speak')
+
+class Chicken(Animal):
+    def eat(self):
+        print('Chicken:eat')
+
+    def speak(self):
+        print('Chicken:speak')
