@@ -1,10 +1,10 @@
 import abc
 
 def main():
-    cow = FactoryCow()
+    cow = CowFactory()
     cow.check_animal()
 
-    chicken = FactoryChicken()
+    chicken = ChickenFactory()
     chicken.check_animal()
 
 class Factory:
