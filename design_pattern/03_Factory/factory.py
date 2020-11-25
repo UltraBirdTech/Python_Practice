@@ -49,3 +49,6 @@ class Chicken(Animal):
 
     def speak(self):
         print('Chicken:speak')
+
+if __name__ == '__main__':
+    main()
