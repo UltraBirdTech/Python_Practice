@@ -28,11 +28,11 @@ class Animal:
     def speak(self):
         pass
 
-class CowFactory(Animal):
+class CowFactory(Factory):
     def factory_method(self):
         return Cow()
 
-class ChickenFactory(Animal):
+class ChickenFactory(Factory):
     def factory_method(self):
         return Chicken()
 
