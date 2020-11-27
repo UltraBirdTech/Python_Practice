@@ -13,7 +13,7 @@ class Factory:
 
     def check_animal(self):
         self.animal.eat()
-        self.animal.cheack()
+        self.animal.speak()
 
     @abc.abstractmethod
     def factory_method(self):
