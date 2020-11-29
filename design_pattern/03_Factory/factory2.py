@@ -1,7 +1,7 @@
 import abc
 
 def main():
-    pass
+    cow_factory = Factory(Cow)
 
 class Factory:
     pass
