@@ -2,6 +2,7 @@ import abc
 
 def main():
     cow_factory = Factory(Cow)
+    cow_factory.check_animal()
 
 class Factory:
     pass
