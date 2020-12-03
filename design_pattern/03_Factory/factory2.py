@@ -5,6 +5,7 @@ def main():
     cow_factory.check_animal()
 
     chicken_factory = Factory(Chicken)
+    chicken_factory.check_animal()
 
 class Factory:
     pass
