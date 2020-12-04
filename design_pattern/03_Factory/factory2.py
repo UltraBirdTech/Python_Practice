@@ -8,7 +8,8 @@ def main():
     chicken_factory.check_animal()
 
 class Factory:
-    pass
+    def __init__(self):
+        pass
 
 class Animal:
     @abc.abstractmethod
