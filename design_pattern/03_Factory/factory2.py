@@ -8,8 +8,8 @@ def main():
     chicken_factory.check_animal()
 
 class Factory:
-    def __init__(self):
-        pass
+    def __init__(self, animal_class):
+        self.animal = animal_class()
 
 class Animal:
     @abc.abstractmethod
