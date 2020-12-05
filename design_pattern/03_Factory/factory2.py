@@ -11,6 +11,10 @@ class Factory:
     def __init__(self, animal_class):
         self.animal = animal_class()
 
+    def check_animal(self):
+        self.animal.eat()
+        self.animal.speak()
+
 class Animal:
     @abc.abstractmethod
     def eat(self):
