@@ -15,15 +15,6 @@ class Factory:
         self.animal.eat()
         self.animal.speak()
 
-class Animal:
-    @abc.abstractmethod
-    def eat(self):
-        pass
-
-    @abc.abstractmethod
-    def speak(self):
-        pass
-
 class CowFactory(Factory):
     def factory_method(self):
         return Cow()
@@ -32,14 +23,14 @@ class ChickenFactory(Factory):
     def factory_method(self):
         return Chicken()
 
-class Cow(Animal):
+class Cow():
     def eat(self):
         print('Cow:eat')
 
     def speak(self):
         print('Cow:speak')
 
-class Chicken(Animal):
+class Chicken():
     def eat(self):
         print('Chicken:eat')
 
