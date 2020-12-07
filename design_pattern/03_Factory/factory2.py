@@ -15,10 +15,6 @@ class Factory:
         self.animal.eat()
         self.animal.speak()
 
-class CowFactory(Factory):
-    def factory_method(self):
-        return Cow()
-
 class ChickenFactory(Factory):
     def factory_method(self):
         return Chicken()
