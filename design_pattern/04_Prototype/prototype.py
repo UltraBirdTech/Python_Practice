@@ -1,4 +1,5 @@
 import copy
 
 def main():
-    pass
+    point1 = Point(2, 3)
+
