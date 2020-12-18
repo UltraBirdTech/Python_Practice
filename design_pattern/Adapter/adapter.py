@@ -2,4 +2,4 @@ import abc
 import sys
 
 def main():
-    pass
+    title = "Monthly Report"
