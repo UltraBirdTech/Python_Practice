@@ -3,7 +3,8 @@ import sys
 
 def main():
     title = "Monthly Report"
-    text = ["good", "best"]
+    texts = ["good", "best"]
 
     pr = PrainTextReporter()
     pr.header(title)
+    pr.main(texts)
