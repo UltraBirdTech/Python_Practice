@@ -8,3 +8,4 @@ def main():
     pr = PrainTextReporter()
     pr.header(title)
     pr.main(texts)
+    pr.footer()
