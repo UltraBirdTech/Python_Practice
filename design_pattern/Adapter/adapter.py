@@ -9,3 +9,5 @@ def main():
     pr.header(title)
     pr.main(texts)
     pr.footer()
+
+    print("\n\n")
