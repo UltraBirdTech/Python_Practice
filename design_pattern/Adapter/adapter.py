@@ -11,3 +11,5 @@ def main():
     pr.footer()
 
     print("\n\n")
+
+    hr = HtmlReporter()
