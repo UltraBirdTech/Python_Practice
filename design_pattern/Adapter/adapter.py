@@ -13,3 +13,4 @@ def main():
     print("\n\n")
 
     hr = HtmlReporter()
+    hr.header(title)
