@@ -14,3 +14,4 @@ def main():
 
     hr = HtmlReporter()
     hr.header(title)
+    hr.main(texts)
