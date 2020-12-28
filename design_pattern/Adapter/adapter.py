@@ -16,3 +16,6 @@ def main():
     hr.header(title)
     hr.main(texts)
     hr.footer()
+
+class HtmlWrite:
+    pass
