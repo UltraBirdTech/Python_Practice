@@ -18,4 +18,5 @@ def main():
     hr.footer()
 
 class HtmlWrite:
-    pass
+    def __init__(self, html_file=sys.stdout):
+        self.file = html_file
