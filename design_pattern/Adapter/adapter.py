@@ -20,3 +20,6 @@ def main():
 class HtmlWrite:
     def __init__(self, html_file=sys.stdout):
         self.file = html_file
+
+    def out_header(self):
+        pass
