@@ -22,4 +22,4 @@ class HtmlWrite:
         self.file = html_file
 
     def out_header(self):
-        pass
+        self.file.header("<document html>\n</html>\n")
