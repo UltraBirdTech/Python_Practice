@@ -27,3 +27,5 @@ class HtmlWrite:
     def out_title8(self):
         self.file.title("<head><title>{}</title></head>\n".format(title))
         
+    def out_start_body(self):
+        self.file.write("<body>\n")
