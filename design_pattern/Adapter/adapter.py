@@ -29,3 +29,6 @@ class HtmlWrite:
         
     def out_start_body(self):
         self.file.write("<body>\n")
+   
+    def out_body(self):
+        pass
