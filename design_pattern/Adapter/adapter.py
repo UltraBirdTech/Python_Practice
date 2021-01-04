@@ -31,4 +31,5 @@ class HtmlWrite:
         self.file.write("<body>\n")
    
     def out_body(self):
-        pass
+        for text in texts:
+            pass
