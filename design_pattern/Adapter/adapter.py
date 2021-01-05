@@ -33,3 +33,6 @@ class HtmlWrite:
     def out_body(self, text):
         for text in texts:
             self.file.write("<p>{}</p>".format(text))
+
+    def out_end_body(self):
+        self.file.write("</body>\n")
