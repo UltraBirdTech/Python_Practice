@@ -38,4 +38,4 @@ class HtmlWrite:
         self.file.write("</body>\n")
 
     def out_footer(self):
-        pass
+        self.file.write("</html>\n")
