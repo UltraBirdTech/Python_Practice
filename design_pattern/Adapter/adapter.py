@@ -40,5 +40,5 @@ class HtmlWrite:
     def out_footer(self):
         self.file.write("</html>\n")
 
-class Reporter:
+class Reporter(metaclass.ABCMeta):
     pass
