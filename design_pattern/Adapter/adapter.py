@@ -41,4 +41,6 @@ class HtmlWrite:
         self.file.write("</html>\n")
 
 class Reporter(metaclass.ABCMeta):
-    pass
+    @abc.abstractmethod
+    def header(self, title):
+        pass
