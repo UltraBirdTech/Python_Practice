@@ -44,3 +44,7 @@ class Reporter(metaclass.ABCMeta):
     @abc.abstractmethod
     def header(self, title):
         pass
+
+    @abc.abstractmethod
+    def main(self, contents):
+        pass
