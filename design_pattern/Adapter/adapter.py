@@ -53,5 +53,6 @@ class Reporter(metaclass.ABCMeta):
     def footer(self):
         pass
 
-class PlainText():
+class PlainTextReporter():
     pass
+    
