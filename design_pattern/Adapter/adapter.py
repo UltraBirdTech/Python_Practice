@@ -54,6 +54,6 @@ class Reporter(metaclass.ABCMeta):
         pass
 
 class PlainTextReporter(Rerporter):
-    pass
+    self.file = file
 
     
