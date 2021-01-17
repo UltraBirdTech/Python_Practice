@@ -54,6 +54,7 @@ class Reporter(metaclass.ABCMeta):
         pass
 
 class PlainTextReporter(Rerporter):
-    self.file = file
+    def __init__(self, file=sys.stdout)
+        self.file = file
 
     
