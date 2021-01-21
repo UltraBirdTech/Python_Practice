@@ -58,5 +58,6 @@ class PlainTextReporter(Rerporter):
         self.file = file
 
     def main(self, texts):
-        pass
+        for text in texts:
+            pass
     
