@@ -59,5 +59,5 @@ class PlainTextReporter(Rerporter):
 
     def main(self, texts):
         for text in texts:
-            pass
+            self.file.write("**{}**\n".format(text))
     
