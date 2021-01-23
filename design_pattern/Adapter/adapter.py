@@ -61,3 +61,5 @@ class PlainTextReporter(Rerporter):
         for text in texts:
             self.file.write("**{}**\n".format(text))
     
+    def footer(self):
+        pass
