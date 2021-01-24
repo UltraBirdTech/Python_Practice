@@ -63,3 +63,6 @@ class PlainTextReporter(Rerporter):
     
     def footer(self):
         pass
+
+class HtmlReporter():
+    pass
