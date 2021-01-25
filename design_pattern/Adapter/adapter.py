@@ -64,6 +64,6 @@ class PlainTextReporter(Rerporter):
     def footer(self):
         pass
 
-class HtmlReporter():
+class HtmlReporter(Reporter, HtmlWriter):
     def __init__(self):
         pass
