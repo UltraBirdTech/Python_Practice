@@ -66,4 +66,4 @@ class PlainTextReporter(Rerporter):
 
 class HtmlReporter(Reporter, HtmlWriter):
     def __init__(self):
-        pass
+        self.file = file
