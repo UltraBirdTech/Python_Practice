@@ -68,3 +68,5 @@ class HtmlReporter(Reporter, HtmlWriter):
     def __init__(self, file=sys.stdout):
         self.file = file
 
+    def header(self):
+        pass
