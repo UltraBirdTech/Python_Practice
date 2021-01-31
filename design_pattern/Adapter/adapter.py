@@ -69,4 +69,4 @@ class HtmlReporter(Reporter, HtmlWriter):
         self.file = file
 
     def header(self, title):
-        pass
+        self.out_header()
