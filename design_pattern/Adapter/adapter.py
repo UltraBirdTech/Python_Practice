@@ -70,3 +70,4 @@ class HtmlReporter(Reporter, HtmlWriter):
 
     def header(self, title):
         self.out_header()
+        self.out_title(title)
