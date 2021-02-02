@@ -72,3 +72,6 @@ class HtmlReporter(Reporter, HtmlWriter):
         self.out_header()
         self.out_title(title)
         self.out_start_body()
+
+    def main(self, texts):
+        pass
