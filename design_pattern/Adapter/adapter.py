@@ -74,4 +74,5 @@ class HtmlReporter(Reporter, HtmlWriter):
         self.out_start_body()
 
     def main(self, texts):
-        pass
+        for test in tests:
+            pass
