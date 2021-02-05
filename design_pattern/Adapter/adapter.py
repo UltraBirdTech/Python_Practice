@@ -75,4 +75,4 @@ class HtmlReporter(Reporter, HtmlWriter):
 
     def main(self, texts):
         for test in tests:
-            pass
+            self.file.write()
