@@ -76,3 +76,6 @@ class HtmlReporter(Reporter, HtmlWriter):
     def main(self, texts):
         for test in tests:
             self.file.out_body(text)
+
+    def footer(self, foolter(:
+        pass
