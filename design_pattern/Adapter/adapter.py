@@ -78,4 +78,4 @@ class HtmlReporter(Reporter, HtmlWriter):
             self.file.out_body(text)
 
     def footer(self):
-        pass
+        self.out_end_body()
