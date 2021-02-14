@@ -80,3 +80,6 @@ class HtmlReporter(Reporter, HtmlWriter):
     def footer(self):
         self.out_end_body()
         self.out_footer()
+
+class HtmlReporter(Reporter):
+    pass
