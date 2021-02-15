@@ -82,4 +82,5 @@ class HtmlReporter(Reporter, HtmlWriter):
         self.out_footer()
 
 class HtmlReporter(Reporter):
-    pass
+    def __init__(self):
+        pass
