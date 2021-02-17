@@ -84,3 +84,6 @@ class HtmlReporter(Reporter, HtmlWriter):
 class HtmlReporter(Reporter):
     def __init__(self, file=sys.stdout):
         self._htmlwriter = HtmlWriter(file)
+
+    def header(self, title):
+        pass
