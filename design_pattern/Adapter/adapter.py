@@ -88,3 +88,4 @@ class HtmlReporter(Reporter):
     def header(self, title):
         self._htmlwriter.out_header()
         self._htmlwriter.out_title()
+        self._htmlwirter.out_start_body()
