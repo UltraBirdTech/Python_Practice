@@ -91,4 +91,4 @@ class HtmlReporter(Reporter):
         self._htmlwirter.out_start_body()
 
     def main(self):
-        pass
+        self._htmlwriter.out_body(texts)
