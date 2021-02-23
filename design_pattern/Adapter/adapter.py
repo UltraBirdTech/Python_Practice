@@ -92,3 +92,6 @@ class HtmlReporter(Reporter):
 
     def main(self):
         self._htmlwriter.out_body(texts)
+
+    def footer(self):
+        pass
