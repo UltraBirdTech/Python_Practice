@@ -94,4 +94,4 @@ class HtmlReporter(Reporter):
         self._htmlwriter.out_body(texts)
 
     def footer(self):
-        pass
+        self._htmlwriter.out_footer()
