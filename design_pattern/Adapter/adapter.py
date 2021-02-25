@@ -96,3 +96,6 @@ class HtmlReporter(Reporter):
     def footer(self):
         self._htmlwriter.out_end_body()
         self._htmlwriter.out_footer()
+ 
+if __name__ == "__main__":
+    main()
