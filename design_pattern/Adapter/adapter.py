@@ -40,7 +40,7 @@ class HtmlWrite:
     def out_footer(self):
         self.file.write("</html>\n")
 
-class Reporter(metaclass.ABCMeta):
+class Reporter(metaclass=ABCMeta):
     @abc.abstractmethod
     def header(self, title):
         pass
