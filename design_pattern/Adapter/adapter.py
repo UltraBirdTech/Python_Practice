@@ -53,7 +53,7 @@ class Reporter(metaclass=abc.ABCMeta):
     def footer(self):
         pass
 
-class PlainTextReporter(Rerporter):
+class PlainTextReporter(Reporter):
     def __init__(self, file=sys.stdout):
         self.file = file
 
