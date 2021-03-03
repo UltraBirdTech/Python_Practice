@@ -5,7 +5,7 @@ def main():
     title = "Monthly Report"
     texts = ["good", "best"]
 
-    pr = PrainTextReporter()
+    pr = PlainTextReporter()
     pr.header(title)
     pr.main(texts)
     pr.footer()
