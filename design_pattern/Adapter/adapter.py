@@ -57,6 +57,9 @@ class PlainTextReporter(Reporter):
     def __init__(self, file=sys.stdout):
         self.file = file
 
+    def header():
+        pass
+
     def main(self, texts):
         for text in texts:
             self.file.write("**{}**\n".format(text))
