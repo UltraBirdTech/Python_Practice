@@ -57,7 +57,7 @@ class PlainTextReporter(Reporter):
     def __init__(self, file=sys.stdout):
         self.file = file
 
-    def header(self):
+    def header(self, header):
         pass
 
     def main(self, texts):
