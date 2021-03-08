@@ -22,7 +22,7 @@ class HtmlWriter:
         self.file = html_file
 
     def out_header(self):
-        self.file.header("<document html>\n</html>\n")
+        self.file.write("<document html>\n</html>\n")
 
     def out_title(self):
         self.file.title("<head><title>{}</title></head>\n".format(title))
