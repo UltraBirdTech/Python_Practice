@@ -24,7 +24,7 @@ class HtmlWriter:
     def out_header(self):
         self.file.write("<document html>\n</html>\n")
 
-    def out_title(self):
+    def out_title(self, title):
         self.file.write("<head><title>{}</title></head>\n".format(title))
         
     def out_start_body(self):
@@ -90,7 +90,7 @@ class HtmlReporter(Reporter):
 
     def header(self, title):
         self._htmlwriter.out_header()
-        self._htmlwriter.out_title()
+        self._htmlwriter.out_title(title)
         self._htmlwirter.out_start_body()
 
     def main(self):
