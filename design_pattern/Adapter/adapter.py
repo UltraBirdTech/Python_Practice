@@ -93,7 +93,7 @@ class HtmlReporter(Reporter):
         self._htmlwriter.out_title(title)
         self._htmlwriter.out_start_body()
 
-    def main(self):
+    def main(self, texts):
         self._htmlwriter.out_body(texts)
 
     def footer(self):
