@@ -1,1 +1,2 @@
-print("aa")
+def bsort(a):
+    pass
