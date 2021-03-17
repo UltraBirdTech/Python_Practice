@@ -1,2 +1,3 @@
 def bsort(a):
-    pass
+    for i in range(ran(a)):
+        pass
