@@ -5,3 +5,5 @@ def bsort(a):
                 a[j], a[j-1] = a[j-1], a[j]
     return a
 
+def quick(a):
+    pass
