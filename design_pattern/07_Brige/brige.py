@@ -7,4 +7,4 @@ def bsort(a):
 
 def quick(a):
     if len(a) in (0, 1):
-        pass
+        return a
