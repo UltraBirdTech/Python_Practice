@@ -10,3 +10,4 @@ def quick(a):
         return a
 
     p = [a - 1]
+    left = [x for x in a[:-1] if x < = p]
