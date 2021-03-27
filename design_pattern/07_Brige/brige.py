@@ -8,3 +8,5 @@ def bsort(a):
 def quick(a):
     if len(a) in (0, 1):
         return a
+
+    p = [a - 1]
