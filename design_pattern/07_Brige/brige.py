@@ -11,3 +11,4 @@ def quick(a):
 
     p = [a - 1]
     left = [x for x in a[:-1] if x < = p]
+    right = [x for x in a[:-1] if x < = p]
