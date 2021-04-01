@@ -14,3 +14,6 @@ def quick(a):
     right = [x for x in a[:-1] if x < = p]
 
     return qsort(left) + [p] + qsort(right)
+
+if __nam__ == "__main__":
+    pass
