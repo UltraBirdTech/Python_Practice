@@ -16,4 +16,4 @@ def quick(a):
     return qsort(left) + [p] + qsort(right)
 
 if __name__ == "__main__":
-    pass
+    bsort()
