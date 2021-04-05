@@ -17,3 +17,4 @@ def quick(a):
 
 if __name__ == "__main__":
     print(bsort())
+    print(quick())
