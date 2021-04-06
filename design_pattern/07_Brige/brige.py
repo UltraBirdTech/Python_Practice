@@ -5,7 +5,7 @@ def bsort(a):
                 a[j], a[j-1] = a[j-1], a[j]
     return a
 
-def quick(a):
+def qsort(a):
     if len(a) in (0, 1):
         return a
 
