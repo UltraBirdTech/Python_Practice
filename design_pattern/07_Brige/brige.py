@@ -16,5 +16,5 @@ def qsort(a):
     return qsort(left) + [p] + qsort(right)
 
 if __name__ == "__main__":
-    print(bsort())
+    print(bsort([2, 7, 3, 4, 9, 1]))
     print(qsort())
