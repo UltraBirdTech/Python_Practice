@@ -9,7 +9,7 @@ def qsort(a):
     if len(a) in (0, 1):
         return a
 
-    p = [a - 1]
+    p = a[-1]
     left = [x for x in a[:-1] if x <= p]
     right = [x for x in a[:-1] if x > p]
 
