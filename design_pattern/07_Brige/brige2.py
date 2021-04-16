@@ -1,4 +1,4 @@
 import time
 
 def main():
-    l = []
+    l = [2, 7, 3, 4, 9, 1]
