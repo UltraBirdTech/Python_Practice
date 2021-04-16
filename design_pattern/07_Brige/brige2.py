@@ -1,4 +1,4 @@
 import time
 
 def main():
-    pass
+    l = []
