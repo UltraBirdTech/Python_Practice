@@ -5,4 +5,4 @@ def main():
     sorter_quick = Sorter(QuickSort())
     print(sort_quick.sort(1))
 
-    sorter_buble = Sorter(BubleSort())
+    sorter_bubble = Sorter(BubbleSort())
