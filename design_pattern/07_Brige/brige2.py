@@ -6,4 +6,4 @@ def main():
     print(sort_quick.sort(1))
 
     sorter_bubble = Sorter(BubbleSort())
-    print(sort_quick.sort(1))
+    print(sort_bubble.sort(1))
