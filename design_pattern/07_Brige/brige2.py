@@ -7,3 +7,5 @@ def main():
 
     sorter_bubble = Sorter(BubbleSort())
     print(sort_bubble.sort(1))
+
+    sorter_quick_timer _= TimeSorter(QuickSorter())
