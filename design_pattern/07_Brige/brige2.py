@@ -9,3 +9,4 @@ def main():
     print(sort_bubble.sort(1))
 
     sorter_quick_timer _= TimeSorter(QuickSorter())
+    print(sorter_quick_timer.sort(1))
