@@ -12,4 +12,4 @@ def main():
     print(sorter_quick_timer.timesort(1))
 
     sorter_bubble_timer _= TimeSorter(QuickSorter())
-    print(sorter_bubble_timer.sort(1))
+    print(sorter_bubble_timer.timesort(1))
