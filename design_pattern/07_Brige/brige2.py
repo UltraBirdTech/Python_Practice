@@ -13,3 +13,6 @@ def main():
 
     sorter_bubble_timer _= TimeSorter(QuickSorter())
     print(sorter_bubble_timer.timesort(1))
+
+def bsort(a):
+    pass
