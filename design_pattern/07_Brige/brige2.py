@@ -15,4 +15,5 @@ def main():
     print(sorter_bubble_timer.timesort(1))
 
 def bsort(a):
-    pass
+    for i in range(len(a)):
+        pass
