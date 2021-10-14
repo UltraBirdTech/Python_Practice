@@ -17,5 +17,6 @@ elif operator == '*':
 
 elif operator == '/':
     print(first / second)
+
 else:
     print('計算できませんでした')
